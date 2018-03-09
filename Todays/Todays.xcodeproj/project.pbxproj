@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8752053053000FDC35F /* XMLFeedParser.swift */; };
-		0C4FD8782053070300FDC35F /* RSSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8772053070300FDC35F /* RSSTableViewController.swift */; };
-		0C4FD87A20530D9300FDC35F /* RSSFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD87920530D9300FDC35F /* RSSFeedItem.swift */; };
+		0C4FD87C20533DA900FDC35F /* RSSFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD87B20533DA900FDC35F /* RSSFeedItem.swift */; };
+		0C4FD8832053485C00FDC35F /* RSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8822053485C00FDC35F /* RSSViewController.swift */; };
 		0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82BE6C2050EECC00B9667C /* AppDelegate.swift */; };
 		0C82BE722050EECC00B9667C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE702050EECC00B9667C /* Main.storyboard */; };
 		0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE732050EECC00B9667C /* Assets.xcassets */; };
@@ -18,8 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0C4FD8752053053000FDC35F /* XMLFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFeedParser.swift; sourceTree = "<group>"; };
-		0C4FD8772053070300FDC35F /* RSSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewController.swift; sourceTree = "<group>"; };
-		0C4FD87920530D9300FDC35F /* RSSFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItem.swift; sourceTree = "<group>"; };
+		0C4FD87B20533DA900FDC35F /* RSSFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItem.swift; sourceTree = "<group>"; };
+		0C4FD8822053485C00FDC35F /* RSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSViewController.swift; sourceTree = "<group>"; };
 		0C82BE692050EECC00B9667C /* Todays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C82BE6C2050EECC00B9667C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C82BE712050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C4FD87D20533DD500FDC35F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0C4FD8752053053000FDC35F /* XMLFeedParser.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0C4FD87E20533DE800FDC35F /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C4FD87B20533DA900FDC35F /* RSSFeedItem.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		0C4FD87F20533DFC00FDC35F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C4FD8822053485C00FDC35F /* RSSViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		0C82BE602050EECC00B9667C = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				0C82BE6C2050EECC00B9667C /* AppDelegate.swift */,
-				0C4FD8772053070300FDC35F /* RSSTableViewController.swift */,
-				0C4FD8752053053000FDC35F /* XMLFeedParser.swift */,
-				0C4FD87920530D9300FDC35F /* RSSFeedItem.swift */,
+				0C4FD87F20533DFC00FDC35F /* Controllers */,
+				0C4FD87E20533DE800FDC35F /* Data Models */,
+				0C4FD87D20533DD500FDC35F /* API */,
 				0C82BE702050EECC00B9667C /* Main.storyboard */,
 				0C82BE732050EECC00B9667C /* Assets.xcassets */,
 				0C82BE752050EECC00B9667C /* LaunchScreen.storyboard */,
@@ -142,10 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4FD8832053485C00FDC35F /* RSSViewController.swift in Sources */,
 				0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */,
 				0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */,
-				0C4FD8782053070300FDC35F /* RSSTableViewController.swift in Sources */,
-				0C4FD87A20530D9300FDC35F /* RSSFeedItem.swift in Sources */,
+				0C4FD87C20533DA900FDC35F /* RSSFeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
