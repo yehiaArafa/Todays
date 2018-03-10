@@ -12,6 +12,7 @@
 		0C4FD8832053485C00FDC35F /* RSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8822053485C00FDC35F /* RSSViewController.swift */; };
 		0C644A362053532F00F514A2 /* RSSFeedItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C644A352053532F00F514A2 /* RSSFeedItemCell.xib */; };
 		0C644A3A20535CAA00F514A2 /* RSSFeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A3920535CAA00F514A2 /* RSSFeedItemCell.swift */; };
+		0C644A3C2053689700F514A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A3B2053689700F514A2 /* Constants.swift */; };
 		0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82BE6C2050EECC00B9667C /* AppDelegate.swift */; };
 		0C82BE722050EECC00B9667C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE702050EECC00B9667C /* Main.storyboard */; };
 		0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE732050EECC00B9667C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		0C4FD8822053485C00FDC35F /* RSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSViewController.swift; sourceTree = "<group>"; };
 		0C644A352053532F00F514A2 /* RSSFeedItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSFeedItemCell.xib; sourceTree = "<group>"; };
 		0C644A3920535CAA00F514A2 /* RSSFeedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItemCell.swift; sourceTree = "<group>"; };
+		0C644A3B2053689700F514A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C82BE692050EECC00B9667C /* Todays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C82BE6C2050EECC00B9667C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C82BE712050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		0C644A382053539D00F514A2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0C644A3B2053689700F514A2 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */,
 				0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */,
 				0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */,
+				0C644A3C2053689700F514A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,8 @@ class RSSViewController: UIViewController {
 
         fetchData()
         
-        let cellNib = UINib(nibName: "RSSFeedItemCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "RSSFeedItemCell")
+        let cellNib = UINib(nibName: CellIdentifiers.RSSFeedItemCell , bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.RSSFeedItemCell)
     }
     
     func fetchData(){
@@ -36,6 +36,7 @@ class RSSViewController: UIViewController {
 
 }
 
+
 // MARK: - Table view data source
 
 extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,7 +49,7 @@ extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell( withIdentifier: "RSSFeedItemCell", for: indexPath ) as! RSSFeedItemCell
+        let cell = tableView.dequeueReusableCell( withIdentifier: CellIdentifiers.RSSFeedItemCell, for: indexPath ) as! RSSFeedItemCell
     
         let item = rssItems[indexPath.row]
     
