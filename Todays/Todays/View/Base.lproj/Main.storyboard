@@ -21,57 +21,47 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yPG-JQ-VqW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RssFeedCell" rowHeight="101" id="b9B-P0-2Rg">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b9B-P0-2Rg" id="MXf-ub-V6R">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-WG-uWi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFL-Rs-llv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pu-gn-oYo">
-                                                            <rect key="frame" x="0.0" y="80" width="320" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LEb-WG-uWi" firstAttribute="leading" secondItem="MXf-ub-V6R" secondAttribute="leading" id="KlC-qW-wnu"/>
-                                                <constraint firstAttribute="bottom" secondItem="LEb-WG-uWi" secondAttribute="bottom" id="NTc-CN-80Z"/>
-                                                <constraint firstAttribute="trailing" secondItem="LEb-WG-uWi" secondAttribute="trailing" id="Tme-b6-4WQ"/>
-                                                <constraint firstItem="LEb-WG-uWi" firstAttribute="top" secondItem="MXf-ub-V6R" secondAttribute="top" id="iy7-n8-zOi"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="kjJ-DJ-ZZh" id="p3L-zu-1AS"/>
                                     <outlet property="delegate" destination="kjJ-DJ-ZZh" id="Gbq-ec-9na"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTq-rb-oe1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="HyQ-oW-omW">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
+                                            <rect key="frame" x="10" y="7" width="300" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="General"/>
+                                                <segment title="Sports"/>
+                                                <segment title="Politics"/>
+                                                <segment title="Buissnes"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="selectSegment:" destination="kjJ-DJ-ZZh" eventType="valueChanged" id="aD2-g4-az9"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yPG-JQ-VqW" firstAttribute="trailing" secondItem="VFj-Re-9cS" secondAttribute="trailing" id="0VR-qt-wh9"/>
                             <constraint firstItem="yPG-JQ-VqW" firstAttribute="top" secondItem="gkw-FB-AL1" secondAttribute="top" id="EDO-FY-F4n"/>
+                            <constraint firstItem="yTq-rb-oe1" firstAttribute="leading" secondItem="VFj-Re-9cS" secondAttribute="leading" id="IRd-wo-THa"/>
+                            <constraint firstItem="yTq-rb-oe1" firstAttribute="trailing" secondItem="VFj-Re-9cS" secondAttribute="trailing" id="XTN-vt-AFs"/>
                             <constraint firstItem="yPG-JQ-VqW" firstAttribute="leading" secondItem="VFj-Re-9cS" secondAttribute="leading" id="oxf-XI-u5Y"/>
+                            <constraint firstItem="yTq-rb-oe1" firstAttribute="top" secondItem="VFj-Re-9cS" secondAttribute="top" id="s2L-mc-iQu"/>
                             <constraint firstItem="yPG-JQ-VqW" firstAttribute="bottom" secondItem="VFj-Re-9cS" secondAttribute="bottom" id="wc0-gK-FC8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VFj-Re-9cS"/>
                     </view>
                     <connections>
+                        <outlet property="segmentedControl" destination="mCm-HF-T6S" id="sq4-5Z-esm"/>
                         <outlet property="tableView" destination="yPG-JQ-VqW" id="CeJ-Ut-GsF"/>
                     </connections>
                 </viewController>

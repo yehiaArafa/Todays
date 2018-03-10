@@ -18,14 +18,17 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
     
     var parserCompletionHandler: (([RSSFeedItemResult]) -> Void)?
     
+    var task: URLSessionDataTask?
     
-    //Networking ( getting the XML file synchron. )
-    func parseFeed(url: String, CompletionHandler: (([RSSFeedItemResult]) -> Void)? ){
+    //Networking
+    func parseFeed(url: URL, CompletionHandler: (([RSSFeedItemResult]) -> Void)? ){
+        
         self.parserCompletionHandler = CompletionHandler
         
-        let request = URLRequest(url: URL(string: url)!)
+        task?.cancel()
+        //let request = URLRequest(url: URL(string: url)!)
         let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) {(data, response, error) in
+        task = urlSession.dataTask(with: url) {(data, response, error) in
             guard let data = data else {
                 if let error = error{
                     print (error.localizedDescription)
@@ -37,7 +40,7 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
             parser.parse()
             
         }
-        task.resume()
+        task?.resume()
     }
     
     
