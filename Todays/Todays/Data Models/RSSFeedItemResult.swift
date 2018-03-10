@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RSSFeedItem{
+class RSSFeedItemResult{
     
     var title = ""
     var description = ""

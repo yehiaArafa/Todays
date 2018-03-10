@@ -11,16 +11,16 @@ import Foundation
 
 class XMLFeedParser: NSObject, XMLParserDelegate{
  
-    var rssItems = [RSSFeedItem]()
+    var rssItems = [RSSFeedItemResult]()
     var currentElement = ""
     var currentTittle = ""
     var currentDescription = ""
     
-    var parserCompletionHandler: (([RSSFeedItem]) -> Void)?
+    var parserCompletionHandler: (([RSSFeedItemResult]) -> Void)?
     
     
     //Networking ( getting the XML file synchron. )
-    func parseFeed(url: String, CompletionHandler: (([RSSFeedItem]) -> Void)? ){
+    func parseFeed(url: String, CompletionHandler: (([RSSFeedItemResult]) -> Void)? ){
         self.parserCompletionHandler = CompletionHandler
         
         let request = URLRequest(url: URL(string: url)!)
@@ -67,7 +67,7 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
         
         if elementName == "item"{
             
-            let item = RSSFeedItem()
+            let item = RSSFeedItemResult()
             item.title = currentTittle
             item.description = currentDescription
             self.rssItems.append(item)

@@ -12,11 +12,15 @@ class RSSViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var rssItems = [RSSFeedItem]()
+    var rssItems = [RSSFeedItemResult]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         fetchData()
+        
+        let cellNib = UINib(nibName: "RSSFeedItemCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "RSSFeedItemCell")
     }
     
     func fetchData(){
@@ -43,24 +47,28 @@ extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
     
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cellIdentifier = "RssFeedCell"
     
-        var cell:UITableViewCell! = tableView.dequeueReusableCell( withIdentifier: cellIdentifier)
+        let cell = tableView.dequeueReusableCell( withIdentifier: "RSSFeedItemCell", for: indexPath ) as! RSSFeedItemCell
     
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+        let item = rssItems[indexPath.row]
+    
+        cell.titleLabel.text = item.title
+        cell.titleLabel.numberOfLines=0
+    
+        return cell
         }
+
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
-            let tittleLabel = cell.viewWithTag(100) as! UILabel
-            //let descriptionLabel = cell.viewWithTag(101) as! UILabel
-    
-            let item = rssItems[indexPath.row]
-            tittleLabel.text = item.title
-            tittleLabel.numberOfLines = 0
-            //descriptionLabel.numberOfLines = 0
-            //descriptionLabel.text = "item.description"
-    
-            return cell
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if rssItems.count == 0 {
+            return nil
+        } else {
+            return indexPath
         }
+    }
+
 }
