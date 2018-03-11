@@ -12,8 +12,9 @@ class RSSFeedItemResult{
     
     var title = ""
     var description = ""
-    var image = ""
+    var imageURL = ""
     var link = ""
     var date = ""
+    var parsedDate = ""
     
 }

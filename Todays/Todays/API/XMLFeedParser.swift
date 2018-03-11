@@ -15,6 +15,12 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
     var currentElement = ""
     var currentTittle = ""
     var currentDescription = ""
+    var currentLink = ""
+    var currentPubDate = ""
+    var parsedDate = ""
+    var imageUrl = ""
+    
+   
     
     var parserCompletionHandler: (([RSSFeedItemResult]) -> Void)?
     
@@ -53,6 +59,8 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
         if currentElement == "item" {
             currentTittle = ""
             currentDescription = ""
+            currentLink = ""
+            currentPubDate = ""
         }
     }
     
@@ -60,7 +68,9 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch currentElement{
             case "title" : currentTittle += string
-            case "description" : currentDescription+=string
+            case "description" : currentDescription += string
+            case "link" : currentLink += string
+            case "pubDate" : currentPubDate += string
             default: break
         }
     }
@@ -73,6 +83,9 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
             let item = RSSFeedItemResult()
             item.title = currentTittle
             item.description = currentDescription
+            item.link = currentLink
+            item.parsedDate = parseDate(from:currentPubDate)
+            item.imageURL = extractImageLink()
             self.rssItems.append(item)
         }
     }
@@ -85,6 +98,53 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
     /* Error */
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         print(parseError.localizedDescription)
+    }
+    
+    func parseDate(from string: String) -> String{
+        if string.isEmpty{
+            return ""
+        }
+        var parsedDate = ""
+        var counter = 0
+        let arry = string.components(separatedBy: " ")
+        for words in arry {
+            counter = counter + 1
+            if(counter < 5){
+                parsedDate += words
+                parsedDate += " "
+            }
+            else{
+                break
+            }
+        }
+        return parsedDate
+    }
+    
+   
+    func extractImageLink() -> String{
+        
+        let regexPattern = "(src[^\\s]+\\b)"
+        do{
+        let regex = try NSRegularExpression(pattern: regexPattern)
+        let results = regex.matches(in: currentDescription, range: NSRange(currentDescription.startIndex..., in: currentDescription))
+
+        let extractedString = results.map {
+            String(currentDescription[Range($0.range, in: currentDescription)!])
+        }.first
+        
+        
+        guard let separatedString = extractedString?.components(separatedBy: "\"")
+            else{
+                return ""
+            }
+        
+        return separatedString[1]
+        
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+        }
+        
+        return "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTYa6wlSRaCNJGKWmYwyWlbs5WTMf-I4NXNySZcNXEeB4Zhln4FKwHtRyFLnqx9t5egEv03dHPCZw"
     }
     
 }

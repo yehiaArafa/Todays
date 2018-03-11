@@ -76,7 +76,7 @@ class RSSViewController: UIViewController {
         feedParser.parseFeed(url: url){
             (items) in
             self.rssItems = items
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 self.isLoading = false
                 self.tableView.reloadData()
             }
@@ -112,8 +112,7 @@ extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
     
         let item = rssItems[indexPath.row]
     
-        cell.titleLabel.text = item.title
-        cell.titleLabel.numberOfLines=0
+        cell.setLabels(for: item)
     
         return cell
         }
