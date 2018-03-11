@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RSSViewController: UIViewController {
+class RSSFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +17,8 @@ class RSSViewController: UIViewController {
     var isLoading = false
     
     var rssItems = [RSSFeedItemResult]()
+    var currentLink = ""
+    var networkManager = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +39,12 @@ class RSSViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.loadingFeedCell)
     }
     
-
-    
+   
     @IBAction func selectSegment(_ sender: Any) {
         fetchData(to: segmentedControl.selectedSegmentIndex)
     }
     
-    
-    
-    
-    
-    
+
     func fetchData(to section: Int){
         
         isLoading = true
@@ -68,9 +65,7 @@ class RSSViewController: UIViewController {
             myUrl = lasCrucesRSS.general
         }
         
-       
-        let net = Networking()
-        let url = net.prepareURL(urlString: myUrl)
+        let url = networkManager.prepareURL(urlString: myUrl)
         
         let feedParser = XMLFeedParser()
         feedParser.parseFeed(url: url){
@@ -82,12 +77,15 @@ class RSSViewController: UIViewController {
             }
         }
     }
+
+
+  
 }
 
 
 // MARK: - Table view data source
 
-extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
+extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -121,6 +119,8 @@ extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        currentLink = rssItems[indexPath.row].link
+        performSegue(withIdentifier: "ArticleDetails", sender: RSSFeedItemCell.self)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -132,3 +132,27 @@ extension RSSViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
+// MARK: - Table view ArticleDetails Delegate
+
+extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
+    
+    func cancel(_ controller: ArticleDetailsViewController) {
+        navigationController?.popViewController(animated:true)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ArticleDetails" {
+            let controller = segue.destination as! ArticleDetailsViewController
+            controller.delegate = self
+            let url = networkManager.prepareURL(urlString: currentLink)
+            let request = networkManager.performRequest(from: url)
+            controller.articleURL = request
+        }
+    }
+    
+    
+}
+    
+

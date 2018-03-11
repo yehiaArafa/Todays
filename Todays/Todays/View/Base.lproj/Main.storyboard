@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kjJ-DJ-ZZh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5jI-NC-ydG">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--RSSFeed-->
         <scene sceneID="TiZ-QL-GHA">
             <objects>
-                <viewController id="kjJ-DJ-ZZh" userLabel="RSSFeed" customClass="RSSViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kjJ-DJ-ZZh" userLabel="RSSFeed" customClass="RSSFeedViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gkw-FB-AL1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,12 +27,12 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTq-rb-oe1">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="HyQ-oW-omW">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
-                                            <rect key="frame" x="10" y="7" width="300" height="30"/>
+                                            <rect key="frame" x="20.5" y="7.5" width="279" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="General"/>
@@ -60,14 +60,82 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VFj-Re-9cS"/>
                     </view>
+                    <navigationItem key="navigationItem" title="News Feed" id="DLw-NK-LGo"/>
                     <connections>
                         <outlet property="segmentedControl" destination="mCm-HF-T6S" id="sq4-5Z-esm"/>
                         <outlet property="tableView" destination="yPG-JQ-VqW" id="CeJ-Ut-GsF"/>
+                        <segue destination="509-6h-Di0" kind="show" identifier="ArticleDetails" id="yD6-D9-mE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-0g-H03" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="45"/>
+            <point key="canvasLocation" x="2025" y="44.366197183098592"/>
+        </scene>
+        <!--ArticleDetails-->
+        <scene sceneID="bOL-ZA-iUc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-aa-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="509-6h-Di0" userLabel="ArticleDetails" customClass="ArticleDetailsViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLL-e8-pxz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-PK-chl">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="top" secondItem="XWm-rU-Tv6" secondAttribute="top" id="5uD-PM-DmI"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="trailing" secondItem="XWm-rU-Tv6" secondAttribute="trailing" id="6KT-JF-k2D"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="bottom" secondItem="XWm-rU-Tv6" secondAttribute="bottom" id="hK9-pH-ndD"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="leading" secondItem="XWm-rU-Tv6" secondAttribute="leading" id="nJV-8P-CO1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XWm-rU-Tv6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Article Detail" largeTitleDisplayMode="never" id="e41-xg-1iD">
+                        <barButtonItem key="leftBarButtonItem" title="back" style="done" id="aKE-Lb-hKH">
+                            <connections>
+                                <action selector="back:" destination="509-6h-Di0" id="7cK-3Z-qpb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="forward" style="done" id="3Tg-fQ-k0q">
+                            <connections>
+                                <action selector="forward:" destination="509-6h-Di0" id="MX4-Qv-DWk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="aKE-Lb-hKH" id="n6v-pI-xuE"/>
+                        <outlet property="forwardButton" destination="3Tg-fQ-k0q" id="6fd-QK-BWY"/>
+                        <outlet property="webView" destination="TGw-PK-chl" id="5rk-GQ-c8J"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2880" y="43.309859154929576"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hMC-qa-cMP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5jI-NC-ydG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bMI-Uo-jqX">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kjJ-DJ-ZZh" kind="relationship" relationship="rootViewController" id="c7W-eF-XZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-SR-cKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="44"/>
         </scene>
     </scenes>
 </document>

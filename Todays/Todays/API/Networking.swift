@@ -16,7 +16,12 @@ class Networking{
         let url = URL(string: urlString)
         return url!
     }
-
+    
+    func performRequest(from url: URL) -> URLRequest{
+        let urlRequest = URLRequest(url: url)
+        return urlRequest
+    }
+    
    
 }
 
