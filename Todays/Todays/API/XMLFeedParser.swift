@@ -26,11 +26,10 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
     
     var task: URLSessionDataTask?
     
-    //Networking
+    //Networking will be refactored to the Network class
     func parseFeed(url: URL, CompletionHandler: (([RSSFeedItemResult]) -> Void)? ){
         
         self.parserCompletionHandler = CompletionHandler
-        
         task?.cancel()
         //let request = URLRequest(url: URL(string: url)!)
         let urlSession = URLSession.shared
@@ -44,7 +43,6 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
             let parser = XMLParser(data: data)
             parser.delegate = self
             parser.parse()
-            
         }
         task?.resume()
     }
@@ -100,6 +98,9 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
         print(parseError.localizedDescription)
     }
     
+    
+  // MARK: - Helper function
+    
     func parseDate(from string: String) -> String{
         if string.isEmpty{
             return ""
@@ -132,19 +133,16 @@ class XMLFeedParser: NSObject, XMLParserDelegate{
             String(currentDescription[Range($0.range, in: currentDescription)!])
         }.first
         
-        
         guard let separatedString = extractedString?.components(separatedBy: "\"")
             else{
                 return ""
             }
-        
         return separatedString[1]
         
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")
         }
-        
-        return "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTYa6wlSRaCNJGKWmYwyWlbs5WTMf-I4NXNySZcNXEeB4Zhln4FKwHtRyFLnqx9t5egEv03dHPCZw"
+        return ""
     }
     
 }

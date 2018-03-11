@@ -35,6 +35,7 @@ class RSSFeedItemCell: UITableViewCell {
          titleLabel.text = searchResult.title
          titleLabel.numberOfLines = 0
         
+        //some networking will be refactored to the Network class
         rssImage.image = UIImage(named: "breakingNews")
         if let imageURL = URL(string: searchResult.imageURL) {
             downloadTask = rssImage.getImage(url: imageURL)
