@@ -11,6 +11,8 @@ import Foundation
 struct CellIdentifiers {
     static let RSSFeedItemCell = "RSSFeedItemCell"
     static let loadingFeedCell = "LoadingFeedCell"
+    static let WeatherCell = "WeatherCell"
+    
 }
 
 struct lasCrucesRSS{
@@ -45,6 +47,15 @@ struct albuquerqueRSS{
     static let economics = "https://news.google.com/news/rss/search/section/q/albuquerque%20economics%20news/albuquerque%20economics%20news?hl=en&gl=US&ned=us"
 }
 
+
+
+struct weatherAPI{
+    static let lasCruces = "http://api.apixu.com/v1/current.xml?key=57096343fae94802969223357181203&q=Las%20Cruces"
+    
+    static let elPaso = "http://api.apixu.com/v1/current.xml?key=57096343fae94802969223357181203&q=El%20Paso"
+    
+    static let albuquerque = "http://api.apixu.com/v1/current.xml?key=57096343fae94802969223357181203&q=Albuquerque"
+}
 
 struct sideMenuContsants{
     static let firstSelection = "Local News"

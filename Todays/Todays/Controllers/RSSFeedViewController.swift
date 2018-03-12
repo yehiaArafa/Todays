@@ -200,7 +200,7 @@ extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ArticleDetailsSegue" {
+        if (segue.identifier == "ArticleDetailsSegue") {
             let controller = segue.destination as! ArticleDetailsViewController
             controller.delegate = self
             
@@ -208,6 +208,11 @@ extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
             
             let request = networkManager.performRequest(from: url)
             controller.articleURL = request
+        }
+        else if(segue.identifier == "ShowMenuFromNewsFeedSegue"){
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let targetController = destinationNavigationController.topViewController as! SideMenuTableViewController
+            targetController.currentCity = currentCity
         }
     }
     

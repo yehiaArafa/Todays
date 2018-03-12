@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C41A59F20570CD800E042F3 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C41A59E20570CD800E042F3 /* WeatherCell.xib */; };
+		0C41A5A32057198A00E042F3 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A22057198A00E042F3 /* WeatherCell.swift */; };
+		0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */; };
+		0C41A5A7205739E600E042F3 /* XMLWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */; };
 		0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8752053053000FDC35F /* XMLFeedParser.swift */; };
 		0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */; };
 		0C4FD8832053485C00FDC35F /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C41A59E20570CD800E042F3 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
+		0C41A5A22057198A00E042F3 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityResult.swift; sourceTree = "<group>"; };
+		0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWeatherParser.swift; sourceTree = "<group>"; };
 		0C4FD8752053053000FDC35F /* XMLFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFeedParser.swift; sourceTree = "<group>"; };
 		0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItemResult.swift; sourceTree = "<group>"; };
 		0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4FD8752053053000FDC35F /* XMLFeedParser.swift */,
+				0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */,
 				0C644A3D205445EA00F514A2 /* Networking.swift */,
 			);
 			path = API;
@@ -79,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */,
+				0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -86,13 +96,13 @@
 		0C4FD87F20533DFC00FDC35F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */,
 				0C644A732055E34B00F514A2 /* MapViewController.swift */,
 				0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */,
 				0C644A452054F06D00F514A2 /* ArticleDetailsViewController.swift */,
-				0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */,
 				0C644A712055E11300F514A2 /* weatherViewController.swift */,
+				0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */,
 				0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */,
-				0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				0C644A3920535CAA00F514A2 /* RSSFeedItemCell.swift */,
+				0C41A5A22057198A00E042F3 /* WeatherCell.swift */,
 				0C644A352053532F00F514A2 /* RSSFeedItemCell.xib */,
 				0C644A412054497D00F514A2 /* LoadingFeedCell.xib */,
+				0C41A59E20570CD800E042F3 /* WeatherCell.xib */,
 				0C82BE702050EECC00B9667C /* Main.storyboard */,
 			);
 			path = View;
@@ -233,6 +245,7 @@
 				0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */,
 				0C82BE722050EECC00B9667C /* Main.storyboard in Resources */,
 				0C644A422054497D00F514A2 /* LoadingFeedCell.xib in Resources */,
+				0C41A59F20570CD800E042F3 /* WeatherCell.xib in Resources */,
 				0C644A362053532F00F514A2 /* RSSFeedItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,9 +314,11 @@
 				0C644A3A20535CAA00F514A2 /* RSSFeedItemCell.swift in Sources */,
 				0C4FD8832053485C00FDC35F /* RSSFeedViewController.swift in Sources */,
 				0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */,
+				0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */,
 				0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */,
 				0C644A702055E0A400F514A2 /* FlickerPicsViewController.swift in Sources */,
 				0C644A6E2055C8FE00F514A2 /* SideMenuTableViewController.swift in Sources */,
+				0C41A5A32057198A00E042F3 /* WeatherCell.swift in Sources */,
 				0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */,
 				0C644A742055E34B00F514A2 /* MapViewController.swift in Sources */,
 				0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */,
@@ -311,6 +326,7 @@
 				0C644A462054F06D00F514A2 /* ArticleDetailsViewController.swift in Sources */,
 				0C644A3E205445EA00F514A2 /* Networking.swift in Sources */,
 				0C644A722055E11300F514A2 /* weatherViewController.swift in Sources */,
+				0C41A5A7205739E600E042F3 /* XMLWeatherParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

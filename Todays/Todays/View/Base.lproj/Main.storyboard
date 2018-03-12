@@ -13,8 +13,6 @@
         <!--RSSFeed-->
         <scene sceneID="TiZ-QL-GHA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-0g-H03" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="UFq-Sp-ETG" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="kjJ-DJ-ZZh" userLabel="RSSFeed" customClass="RSSFeedViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gkw-FB-AL1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -29,11 +27,11 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTq-rb-oe1">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="HyQ-oW-omW">
                                         <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
                                             <rect key="frame" x="20.5" y="7.5" width="279" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -65,7 +63,7 @@
                     <navigationItem key="navigationItem" title="News Feed" id="DLw-NK-LGo">
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="9Tj-AS-Od8">
                             <connections>
-                                <segue destination="b4x-yV-onb" kind="presentation" id="b43-LA-eCy"/>
+                                <segue destination="b4x-yV-onb" kind="presentation" identifier="ShowMenuFromNewsFeedSegue" id="b43-LA-eCy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="307-qj-krm">
@@ -82,20 +80,21 @@
                         <segue destination="UFq-Sp-ETG" kind="unwind" identifier="unwindViewController" unwindAction="prepareForUnwindWithSegue:" id="xjQ-oS-a1G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-0g-H03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UFq-Sp-ETG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1569" y="173"/>
         </scene>
         <!--ArticleDetails-->
         <scene sceneID="bOL-ZA-iUc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-aa-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="509-6h-Di0" userLabel="ArticleDetails" customClass="ArticleDetailsViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WLL-e8-pxz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-PK-chl">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -130,13 +129,13 @@
                         <outlet property="webView" destination="TGw-PK-chl" id="5rk-GQ-c8J"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-aa-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2432" y="201"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hMC-qa-cMP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-SR-cKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5jI-NC-ydG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bMI-Uo-jqX">
@@ -148,6 +147,7 @@
                         <segue destination="kjJ-DJ-ZZh" kind="relationship" relationship="rootViewController" id="c7W-eF-XZ5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-SR-cKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569.375" y="-610.56338028169012"/>
         </scene>
@@ -197,7 +197,7 @@
         <scene sceneID="RWL-Im-KVZ">
             <objects>
                 <tableViewController id="g5Z-Az-Uhb" customClass="SideMenuTableViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nJn-xj-hSN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nJn-xj-hSN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,19 +245,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-aJ-Fga">
-                                <rect key="frame" x="0.0" y="-14" width="320" height="582"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-aJ-Fga">
+                                <rect key="frame" x="0.0" y="10" width="320" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="de8-BM-8yq" id="RRD-mZ-Ucc"/>
+                                    <outlet property="delegate" destination="de8-BM-8yq" id="OSX-E9-ZKD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3ac-aJ-Fga" firstAttribute="trailing" secondItem="dVJ-PU-Tsn" secondAttribute="trailing" id="37s-yN-L3O"/>
+                            <constraint firstItem="3ac-aJ-Fga" firstAttribute="bottom" secondItem="dVJ-PU-Tsn" secondAttribute="bottom" id="7UU-8N-Zrs"/>
+                            <constraint firstItem="3ac-aJ-Fga" firstAttribute="top" secondItem="SVs-4n-E5B" secondAttribute="top" constant="10" id="TFK-YM-srY"/>
+                            <constraint firstItem="3ac-aJ-Fga" firstAttribute="leading" secondItem="dVJ-PU-Tsn" secondAttribute="leading" id="iaE-jz-Glm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dVJ-PU-Tsn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="rQD-1X-muL">
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="Avk-sf-z5W">
                             <connections>
-                                <segue destination="b4x-yV-onb" kind="presentation" id="09d-Mo-90X"/>
+                                <segue destination="b4x-yV-onb" kind="presentation" identifier="ShowMenuFromWeatherSegue" id="09d-Mo-90X"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="qf4-Xo-vOu">
@@ -266,10 +276,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="3ac-aJ-Fga" id="sVs-IN-SVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKn-rV-L0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="1765"/>
+            <point key="canvasLocation" x="-461.25" y="1764.0845070422536"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Rtr-r4-2Kd">
@@ -295,7 +308,6 @@
         <!--Restaurants-->
         <scene sceneID="nqL-fv-h1R">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r31-h7-EQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="C21-jL-XOM" customClass="RestaurantsViewController" customModule="Todays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QDC-0c-1Jl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -323,6 +335,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r31-h7-EQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="2029"/>
         </scene>
@@ -362,9 +375,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b43-LA-eCy"/>
-        <segue reference="7UA-OH-3p7"/>
-        <segue reference="UvX-oe-9H5"/>
-        <segue reference="c7W-eF-XZ5"/>
+        <segue reference="we3-Fq-8cR"/>
+        <segue reference="09d-Mo-90X"/>
+        <segue reference="4eM-ZM-w2z"/>
+        <segue reference="MQn-bJ-eVn"/>
+        <segue reference="6xl-DH-fHh"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,12 +11,11 @@ import UIKit
 class SideMenuTableViewController: UITableViewController {
 
    var sideMenuOptions = [String]()
-    
+   var currentCity = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuOptions.append(sideMenuContsants.firstSelection)
-        //sideMenuOptions.append("NMSU News")
         sideMenuOptions.append(sideMenuContsants.secondSelection)
         sideMenuOptions.append(sideMenuContsants.thirdSelection)
         sideMenuOptions.append(sideMenuContsants.fourthSelection)
@@ -63,5 +62,19 @@ class SideMenuTableViewController: UITableViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "WeatherSegue") {
+            let destinationNavigationController = segue.destination as! weatherViewController
+            destinationNavigationController.currentCity = currentCity
+            
+        }
+        if (segue.identifier == "FeedSegue") {
+            let destinationNavigationController = segue.destination as! RSSFeedViewController
+            destinationNavigationController.currentCity = currentCity
+            
+        }
+        
+    }
 
 }
