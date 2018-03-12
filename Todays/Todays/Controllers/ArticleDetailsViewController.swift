@@ -29,7 +29,7 @@ class ArticleDetailsViewController: UIViewController {
         super.viewDidLoad()
         webView.navigationDelegate = self
         forwardButton.isEnabled = false
-        backButton.isEnabled = false
+        backButton.isEnabled = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

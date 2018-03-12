@@ -8,14 +8,15 @@
 
 import UIKit
 
+
+
 class RSSFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+
+    var currentCity: Int = 0
     var isLoading = false
-    
     var rssItems = [RSSFeedItemResult]()
     var currentLink = ""
     var networkManager = Networking()
@@ -24,12 +25,12 @@ class RSSFeedViewController: UIViewController {
         super.viewDidLoad()
 
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
-        
+        registerTheNibs()
         fetchData(to: segmentedControl.selectedSegmentIndex)
         
-        registerTheNibs()
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
     
     func registerTheNibs(){
         var cellNib = UINib(nibName: CellIdentifiers.RSSFeedItemCell , bundle: nil)
@@ -54,15 +55,54 @@ class RSSFeedViewController: UIViewController {
         
         switch section {
         case 0:
-          myUrl = lasCrucesRSS.general
+            switch currentCity{
+            case 0:
+                myUrl = lasCrucesRSS.general
+            case 1:
+                myUrl = elPasoRSS.general
+            case 2:
+                myUrl = albuquerqueRSS.general
+            default:
+                 myUrl = ""
+            }
+          
         case 1:
-            myUrl = lasCrucesRSS.sports
+            switch currentCity{
+            case 0:
+                myUrl = lasCrucesRSS.sports
+            case 1:
+                myUrl = elPasoRSS.sports
+            case 2:
+                myUrl = albuquerqueRSS.sports
+            default:
+                 myUrl = ""
+            }
+            
         case 2:
-            myUrl = lasCrucesRSS.politics
+            switch currentCity{
+            case 0:
+                myUrl = lasCrucesRSS.politics
+            case 1:
+                myUrl = elPasoRSS.politics
+            case 2:
+                myUrl = albuquerqueRSS.politics
+            default:
+                 myUrl = ""
+            }
+            
         case 3:
-            myUrl = lasCrucesRSS.economics
+            switch currentCity{
+            case 0:
+                myUrl = lasCrucesRSS.economics
+            case 1:
+                myUrl = elPasoRSS.economics
+            case 2:
+                myUrl = albuquerqueRSS.economics
+            default:
+                myUrl = ""
+            }
         default:
-            myUrl = lasCrucesRSS.general
+            myUrl = ""
         }
         
         let url = networkManager.prepareURL(urlString: myUrl)
@@ -78,8 +118,8 @@ class RSSFeedViewController: UIViewController {
         }
     }
 
-
   
+
 }
 
 
@@ -154,5 +194,7 @@ extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
     
     
 }
+
+
     
 
