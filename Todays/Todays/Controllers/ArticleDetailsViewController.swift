@@ -56,6 +56,8 @@ class ArticleDetailsViewController: UIViewController {
     }
 }
 
+
+
 extension ArticleDetailsViewController: WKNavigationDelegate{
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

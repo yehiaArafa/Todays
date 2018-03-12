@@ -20,6 +20,8 @@ class RSSFeedViewController: UIViewController {
     var rssItems = [RSSFeedItemResult]()
     var currentLink = ""
     var networkManager = Networking()
+    var isNMSULink = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,12 @@ class RSSFeedViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         registerTheNibs()
         fetchData(to: segmentedControl.selectedSegmentIndex)
+        if (currentCity == 0){
+            replaceSegments()
+        }
+        
         
     }
-    
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
     
     func registerTheNibs(){
         var cellNib = UINib(nibName: CellIdentifiers.RSSFeedItemCell , bundle: nil)
@@ -38,6 +42,11 @@ class RSSFeedViewController: UIViewController {
         
         cellNib = UINib(nibName: CellIdentifiers.loadingFeedCell , bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.loadingFeedCell)
+   
+    }
+    
+    func replaceSegments() {
+         segmentedControl.insertSegment(withTitle: "NMSU", at: 4, animated: false)
     }
     
    
@@ -49,6 +58,7 @@ class RSSFeedViewController: UIViewController {
     func fetchData(to section: Int){
         
         isLoading = true
+        isNMSULink = true
         tableView.reloadData()
         
         var myUrl : String
@@ -101,9 +111,13 @@ class RSSFeedViewController: UIViewController {
             default:
                 myUrl = ""
             }
+        case 4:
+           myUrl = lasCrucesRSS.NMSU
+           isNMSULink = true
         default:
             myUrl = ""
         }
+        
         
         let url = networkManager.prepareURL(urlString: myUrl)
         
@@ -159,7 +173,10 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        currentLink = rssItems[indexPath.row].link
+         currentLink = rssItems[indexPath.row].link
+        if(isNMSULink){
+           currentLink = currentLink.components(separatedBy: .whitespacesAndNewlines).joined()
+        }
         performSegue(withIdentifier: "ArticleDetailsSegue", sender: RSSFeedItemCell.self)
     }
     
@@ -186,7 +203,9 @@ extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
         if segue.identifier == "ArticleDetailsSegue" {
             let controller = segue.destination as! ArticleDetailsViewController
             controller.delegate = self
+            
             let url = networkManager.prepareURL(urlString: currentLink)
+            
             let request = networkManager.performRequest(from: url)
             controller.articleURL = request
         }
