@@ -20,6 +20,7 @@
 		0C644A702055E0A400F514A2 /* FlickerPicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */; };
 		0C644A722055E11300F514A2 /* weatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A712055E11300F514A2 /* weatherViewController.swift */; };
 		0C644A742055E34B00F514A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A732055E34B00F514A2 /* MapViewController.swift */; };
+		0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */; };
 		0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82BE6C2050EECC00B9667C /* AppDelegate.swift */; };
 		0C82BE722050EECC00B9667C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE702050EECC00B9667C /* Main.storyboard */; };
 		0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE732050EECC00B9667C /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerPicsViewController.swift; sourceTree = "<group>"; };
 		0C644A712055E11300F514A2 /* weatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherViewController.swift; sourceTree = "<group>"; };
 		0C644A732055E34B00F514A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 		0C82BE692050EECC00B9667C /* Todays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C82BE6C2050EECC00B9667C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C82BE712050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,12 +86,13 @@
 		0C4FD87F20533DFC00FDC35F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */,
 				0C644A732055E34B00F514A2 /* MapViewController.swift */,
 				0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */,
 				0C644A452054F06D00F514A2 /* ArticleDetailsViewController.swift */,
 				0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */,
 				0C644A712055E11300F514A2 /* weatherViewController.swift */,
+				0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */,
+				0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				0C644A6E2055C8FE00F514A2 /* SideMenuTableViewController.swift in Sources */,
 				0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */,
 				0C644A742055E34B00F514A2 /* MapViewController.swift in Sources */,
+				0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */,
 				0C644A3C2053689700F514A2 /* Constants.swift in Sources */,
 				0C644A462054F06D00F514A2 /* ArticleDetailsViewController.swift in Sources */,
 				0C644A3E205445EA00F514A2 /* Networking.swift in Sources */,

@@ -16,7 +16,7 @@ class SideMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuOptions.append(sideMenuContsants.firstSelection)
-        sideMenuOptions.append("NMSU News")
+        //sideMenuOptions.append("NMSU News")
         sideMenuOptions.append(sideMenuContsants.secondSelection)
         sideMenuOptions.append(sideMenuContsants.thirdSelection)
         sideMenuOptions.append(sideMenuContsants.fourthSelection)
@@ -40,6 +40,19 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row == 0){
+            performSegue(withIdentifier: "FeedSegue", sender: RSSFeedItemCell.self)
+        }
+        else if (indexPath.row == 1){
+            performSegue(withIdentifier: "RestaurantsSegue", sender: RSSFeedItemCell.self)
+        }
+        else if (indexPath.row == 2){
+            performSegue(withIdentifier: "PicsSegue", sender: RSSFeedItemCell.self)
+        }
+        else if (indexPath.row == 3){
+            performSegue(withIdentifier: "WeatherSegue", sender: RSSFeedItemCell.self)
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

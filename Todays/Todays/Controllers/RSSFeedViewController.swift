@@ -160,7 +160,7 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         currentLink = rssItems[indexPath.row].link
-        performSegue(withIdentifier: "ArticleDetails", sender: RSSFeedItemCell.self)
+        performSegue(withIdentifier: "ArticleDetailsSegue", sender: RSSFeedItemCell.self)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -183,7 +183,7 @@ extension RSSFeedViewController: ArticleDetailsViewControllerDelegate{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ArticleDetails" {
+        if segue.identifier == "ArticleDetailsSegue" {
             let controller = segue.destination as! ArticleDetailsViewController
             controller.delegate = self
             let url = networkManager.prepareURL(urlString: currentLink)
