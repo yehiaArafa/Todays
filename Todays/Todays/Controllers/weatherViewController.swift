@@ -28,9 +28,18 @@ class weatherViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
       
         super.viewWillAppear(animated)
-        
+        var backgroundImage = UIImage(named: "las_cruces")
         // Add a background view to the table view
-        let backgroundImage = UIImage(named: "Organ_Mountains")
+        if (currentCity == 0){
+            backgroundImage = UIImage(named: "las_cruces")
+        }
+        else if(currentCity == 1){
+            backgroundImage = UIImage(named: "elpaso")
+        }
+        else if(currentCity == 2){
+            backgroundImage = UIImage(named: "albaqurque")
+        }
+        
         let imageView = UIImageView(image: backgroundImage)
         tableView.backgroundView = imageView
     }

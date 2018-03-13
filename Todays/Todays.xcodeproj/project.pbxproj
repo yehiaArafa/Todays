@@ -11,6 +11,7 @@
 		0C41A5A32057198A00E042F3 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A22057198A00E042F3 /* WeatherCell.swift */; };
 		0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */; };
 		0C41A5A7205739E600E042F3 /* XMLWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */; };
+		0C41A5A92057875600E042F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C41A5A82057875600E042F3 /* Images.xcassets */; };
 		0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8752053053000FDC35F /* XMLFeedParser.swift */; };
 		0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */; };
 		0C4FD8832053485C00FDC35F /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */; };
@@ -27,7 +28,6 @@
 		0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */; };
 		0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82BE6C2050EECC00B9667C /* AppDelegate.swift */; };
 		0C82BE722050EECC00B9667C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE702050EECC00B9667C /* Main.storyboard */; };
-		0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE732050EECC00B9667C /* Assets.xcassets */; };
 		0C82BE772050EECC00B9667C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE752050EECC00B9667C /* LaunchScreen.storyboard */; };
 		69AD5EA4E2F95CEEBE034684 /* Pods_Todays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE26114A5713CF7F200CCD4C /* Pods_Todays.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +37,7 @@
 		0C41A5A22057198A00E042F3 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityResult.swift; sourceTree = "<group>"; };
 		0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWeatherParser.swift; sourceTree = "<group>"; };
+		0C41A5A82057875600E042F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C4FD8752053053000FDC35F /* XMLFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFeedParser.swift; sourceTree = "<group>"; };
 		0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItemResult.swift; sourceTree = "<group>"; };
 		0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		0C82BE692050EECC00B9667C /* Todays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C82BE6C2050EECC00B9667C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C82BE712050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0C82BE732050EECC00B9667C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C82BE762050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C82BE782050EECC00B9667C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD30EA08061E4D9FD871D548 /* Pods-Todays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todays/Pods-Todays.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +131,7 @@
 		0C82BE602050EECC00B9667C = {
 			isa = PBXGroup;
 			children = (
+				0C41A5A82057875600E042F3 /* Images.xcassets */,
 				0C82BE6B2050EECC00B9667C /* Todays */,
 				0C82BE6A2050EECC00B9667C /* Products */,
 				0EFCFE3DFF7D7ACE8120E377 /* Pods */,
@@ -155,7 +156,6 @@
 				0C644A372053533400F514A2 /* View */,
 				0C4FD87D20533DD500FDC35F /* API */,
 				0C644A382053539D00F514A2 /* Helpers */,
-				0C82BE732050EECC00B9667C /* Assets.xcassets */,
 				0C82BE752050EECC00B9667C /* LaunchScreen.storyboard */,
 				0C82BE782050EECC00B9667C /* Info.plist */,
 			);
@@ -242,9 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C82BE772050EECC00B9667C /* LaunchScreen.storyboard in Resources */,
-				0C82BE742050EECC00B9667C /* Assets.xcassets in Resources */,
 				0C82BE722050EECC00B9667C /* Main.storyboard in Resources */,
 				0C644A422054497D00F514A2 /* LoadingFeedCell.xib in Resources */,
+				0C41A5A92057875600E042F3 /* Images.xcassets in Resources */,
 				0C41A59F20570CD800E042F3 /* WeatherCell.xib in Resources */,
 				0C644A362053532F00F514A2 /* RSSFeedItemCell.xib in Resources */,
 			);
