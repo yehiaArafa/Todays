@@ -10,7 +10,9 @@ import UIKit
 
 class weatherViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var weatherTableView: UITableView!
+    
     var networkManager = Networking()
     var weatherItem = WeatherCityResult()
     var currentCity = 0
@@ -18,18 +20,19 @@ class weatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        tableView.rowHeight = 500
+        weatherTableView.tableFooterView = UIView()
+        weatherTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         registerTheNibs()
-        fetchData()
+        //fetchData()
+       //print(weatherTableView.bounds.height / 2)
+         weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 3 - 40, left: 0 , bottom: 0, right: 20)
     }
 
     override func viewWillAppear(_ animated: Bool) {
       
         super.viewWillAppear(animated)
         var backgroundImage = UIImage(named: "las_cruces")
-        // Add a background view to the table view
+        
         if (currentCity == 0){
             backgroundImage = UIImage(named: "las_cruces")
         }
@@ -39,15 +42,15 @@ class weatherViewController: UIViewController {
         else if(currentCity == 2){
             backgroundImage = UIImage(named: "albaqurque")
         }
-        
+
         let imageView = UIImageView(image: backgroundImage)
-        tableView.backgroundView = imageView
+        weatherTableView.backgroundView = imageView
+        
     }
     
     func registerTheNibs(){
         let cellNib = UINib(nibName: CellIdentifiers.WeatherCell , bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.WeatherCell)
-        
+        weatherTableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.WeatherCell)
     }
 
 
@@ -72,7 +75,7 @@ class weatherViewController: UIViewController {
             (item) in
             self.weatherItem = item
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.weatherTableView.reloadData()
             }
         }
     }
@@ -88,21 +91,33 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
+//        cell.setLabel(currentCity: weatherItem.cityName, currentIcon: "icon", currentWeather: weatherItem.temperature_f)
+//
+//        return cell
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
-        cell.setLabel(currentCity: weatherItem.cityName, currentIcon: "icon", currentWeather: weatherItem.temperature_f)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor(red:0.752, green:0.752, blue:0.752, alpha: 0.5)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let tHeight = tableView.bounds.height / 2
+        return tHeight
     }
    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
         if(segue.identifier == "ShowMenuFromWeatherSegue"){
             let destinationNavigationController = segue.destination as! UINavigationController
             let targetController = destinationNavigationController.topViewController as! SideMenuTableViewController

@@ -113,8 +113,8 @@
 				0C644A3920535CAA00F514A2 /* RSSFeedItemCell.swift */,
 				0C41A5A22057198A00E042F3 /* WeatherCell.swift */,
 				0C644A352053532F00F514A2 /* RSSFeedItemCell.xib */,
-				0C644A412054497D00F514A2 /* LoadingFeedCell.xib */,
 				0C41A59E20570CD800E042F3 /* WeatherCell.xib */,
+				0C644A412054497D00F514A2 /* LoadingFeedCell.xib */,
 				0C82BE702050EECC00B9667C /* Main.storyboard */,
 			);
 			path = View;
