@@ -13,6 +13,7 @@ import CoreData
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    var annotations: [MapLocation] = []
     
     
     override func viewDidLoad() {
@@ -30,18 +31,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func updatePins(){
         
-        var annotations: [MapLocation] = []
-        
-        var annotation = MapLocation(title: LasCrucesMapAnnotations.title,
-                        locationName: LasCrucesMapAnnotations.locationName,
-                        discipline: LasCrucesMapAnnotations.discipline,
-                        coordinate: CLLocationCoordinate2D(latitude: LasCrucesMapAnnotations.latitude, longitude: LasCrucesMapAnnotations.longitude))
-        annotations.append(annotation)
-        
-        annotation = MapLocation(title: ElPasoMapAnnotations.title,
+        var annotation = MapLocation(title: ElPasoMapAnnotations.title,
                                  locationName: ElPasoMapAnnotations.locationName,
                                  discipline: ElPasoMapAnnotations.discipline,
                                  coordinate: CLLocationCoordinate2D(latitude: ElPasoMapAnnotations.latitude, longitude: ElPasoMapAnnotations.longitude))
+        annotations.append(annotation)
+        
+        annotation = MapLocation(title: LasCrucesMapAnnotations.title,
+                        locationName: LasCrucesMapAnnotations.locationName,
+                        discipline: LasCrucesMapAnnotations.discipline,
+                        coordinate: CLLocationCoordinate2D(latitude: LasCrucesMapAnnotations.latitude, longitude: LasCrucesMapAnnotations.longitude))
         annotations.append(annotation)
         
         annotation = MapLocation(title: AlbuquerqueMapAnnotations.title,
@@ -53,6 +52,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addAnnotations(annotations)
     }
     
+    @objc func showLocationDetails(_ sender: UIButton) {
+        if(sender.tag == 0 ){
+            performSegue(withIdentifier: "ELPNewsFeedSegue" , sender: MapViewController.self)
+        }
+        else if(sender.tag == 1){
+            performSegue(withIdentifier: "LCNewsFeedSegue", sender: MapViewController.self)
+        }
+        else if(sender.tag == 2 ){
+            performSegue(withIdentifier: "ABNewsFeedSegue", sender: MapViewController.self)
+        }
+      
+    }
     
     // MARK: - Navigation
 
@@ -78,21 +89,43 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
     
-  
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if((view.annotation?.title)! == "Las Cruces"){
-            performSegue(withIdentifier: "LCNewsFeedSegue", sender: MapViewController.self)
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard annotation is MapLocation else {
+            return nil
         }
-        else if((view.annotation?.title)! == "El Paso"){
-            performSegue(withIdentifier: "ELPNewsFeedSegue", sender: MapViewController.self)
+        let identifier = "MapLocation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            
+            pinView.isEnabled = true
+            pinView.canShowCallout = true
+            pinView.animatesDrop = false
+            pinView.pinTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+            
+            
+            let rightButton = UIButton(type: .detailDisclosure)
+            rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)
+            pinView.rightCalloutAccessoryView = rightButton
+            
+            annotationView = pinView
         }
-        else if((view.annotation?.title)! == "Albuquerque"){
-            performSegue(withIdentifier: "ABNewsFeedSegue", sender: MapViewController.self)
+        
+        if let annotationView = annotationView {
+            annotationView.annotation = annotation
+            
+            let button = annotationView.rightCalloutAccessoryView
+                as! UIButton
+            if let index = annotations.index(of: annotation as! MapLocation) {
+                button.tag = index
+            }
         }
+        
+        return annotationView
     }
-    
-    
 
+    
 }
 
 
