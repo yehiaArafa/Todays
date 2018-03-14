@@ -94,20 +94,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-PK-chl">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-B1-tSc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="QDq-lU-PEN"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TGw-PK-chl" firstAttribute="top" secondItem="XWm-rU-Tv6" secondAttribute="top" id="5uD-PM-DmI"/>
-                            <constraint firstItem="TGw-PK-chl" firstAttribute="trailing" secondItem="XWm-rU-Tv6" secondAttribute="trailing" id="6KT-JF-k2D"/>
-                            <constraint firstItem="TGw-PK-chl" firstAttribute="bottom" secondItem="XWm-rU-Tv6" secondAttribute="bottom" id="hK9-pH-ndD"/>
-                            <constraint firstItem="TGw-PK-chl" firstAttribute="leading" secondItem="XWm-rU-Tv6" secondAttribute="leading" id="nJV-8P-CO1"/>
+                            <constraint firstItem="cMh-B1-tSc" firstAttribute="leading" secondItem="WLL-e8-pxz" secondAttribute="leading" id="1vD-LZ-tX0"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="top" secondItem="cMh-B1-tSc" secondAttribute="bottom" id="9yf-FS-7ak"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="trailing" secondItem="XWm-rU-Tv6" secondAttribute="trailing" id="Q6v-Da-cL9"/>
+                            <constraint firstItem="cMh-B1-tSc" firstAttribute="top" secondItem="XWm-rU-Tv6" secondAttribute="top" id="UUw-g4-pH5"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="top" secondItem="cMh-B1-tSc" secondAttribute="bottom" id="Wf4-gE-dIu"/>
+                            <constraint firstAttribute="trailing" secondItem="cMh-B1-tSc" secondAttribute="trailing" id="tc4-yj-gbO"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="leading" secondItem="XWm-rU-Tv6" secondAttribute="leading" id="uBE-5P-PkB"/>
+                            <constraint firstItem="TGw-PK-chl" firstAttribute="bottom" secondItem="XWm-rU-Tv6" secondAttribute="bottom" id="vgx-Ej-EXO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XWm-rU-Tv6"/>
                     </view>
@@ -126,12 +136,13 @@
                     <connections>
                         <outlet property="backButton" destination="aKE-Lb-hKH" id="n6v-pI-xuE"/>
                         <outlet property="forwardButton" destination="3Tg-fQ-k0q" id="6fd-QK-BWY"/>
+                        <outlet property="progressBar" destination="cMh-B1-tSc" id="thK-yc-aH1"/>
                         <outlet property="webView" destination="TGw-PK-chl" id="5rk-GQ-c8J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-aa-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="-400"/>
+            <point key="canvasLocation" x="2850" y="-400.35211267605632"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hMC-qa-cMP">

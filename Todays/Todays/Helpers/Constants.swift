@@ -76,7 +76,7 @@ struct ElPasoMapAnnotations{
     static let title = "El Paso"
     static let latitude = 31.772543
     static let longitude = -106.460953
-    static let locationName = "Texus"
+    static let locationName = "Texas"
     static let discipline = "sculpture"
 }
 struct AlbuquerqueMapAnnotations{
