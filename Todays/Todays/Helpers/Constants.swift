@@ -64,5 +64,28 @@ struct sideMenuContsants{
     static let fourthSelection = "Local Weather"
 }
 
+struct LasCrucesMapAnnotations{
+    static let title = "Las Cruces"
+    static let latitude = 32.3199396
+    static let longitude = -106.7636538
+    static let locationName = "New Mexico"
+    static let discipline = "sculpture"
+}
+
+struct ElPasoMapAnnotations{
+    static let title = "El Paso"
+    static let latitude = 31.772543
+    static let longitude = -106.460953
+    static let locationName = "Texus"
+    static let discipline = "sculpture"
+}
+struct AlbuquerqueMapAnnotations{
+    static let title = "Albuquerque"
+    static let latitude = 35.113281
+    static let longitude = -106.621216
+    static let locationName = "New Mexico"
+    static let discipline = "sculpture"
+}
+
 
 

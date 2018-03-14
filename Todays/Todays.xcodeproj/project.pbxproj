@@ -12,6 +12,8 @@
 		0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */; };
 		0C41A5A7205739E600E042F3 /* XMLWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */; };
 		0C41A5A92057875600E042F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C41A5A82057875600E042F3 /* Images.xcassets */; };
+		0C41A5B020586A6D00E042F3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C41A5AE20585E3900E042F3 /* MapKit.framework */; };
+		0C41A5C920588A2100E042F3 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5C820588A2100E042F3 /* MapLocation.swift */; };
 		0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8752053053000FDC35F /* XMLFeedParser.swift */; };
 		0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */; };
 		0C4FD8832053485C00FDC35F /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */; };
@@ -38,6 +40,8 @@
 		0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityResult.swift; sourceTree = "<group>"; };
 		0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWeatherParser.swift; sourceTree = "<group>"; };
 		0C41A5A82057875600E042F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0C41A5AE20585E3900E042F3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0C41A5C820588A2100E042F3 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		0C4FD8752053053000FDC35F /* XMLFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFeedParser.swift; sourceTree = "<group>"; };
 		0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItemResult.swift; sourceTree = "<group>"; };
 		0C4FD8822053485C00FDC35F /* RSSFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C41A5B020586A6D00E042F3 /* MapKit.framework in Frameworks */,
 				69AD5EA4E2F95CEEBE034684 /* Pods_Todays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +92,7 @@
 		0C4FD87E20533DE800FDC35F /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				0C41A5C820588A2100E042F3 /* MapLocation.swift */,
 				0C4FD87B20533DA900FDC35F /* RSSFeedItemResult.swift */,
 				0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */,
 			);
@@ -165,6 +171,7 @@
 		0D3CDC083D087B5475E227ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C41A5AE20585E3900E042F3 /* MapKit.framework */,
 				CE26114A5713CF7F200CCD4C /* Pods_Todays.framework */,
 			);
 			name = Frameworks;
@@ -215,6 +222,11 @@
 					0C82BE682050EECC00B9667C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -313,6 +325,7 @@
 			files = (
 				0C644A3A20535CAA00F514A2 /* RSSFeedItemCell.swift in Sources */,
 				0C4FD8832053485C00FDC35F /* RSSFeedViewController.swift in Sources */,
+				0C41A5C920588A2100E042F3 /* MapLocation.swift in Sources */,
 				0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */,
 				0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */,
 				0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */,

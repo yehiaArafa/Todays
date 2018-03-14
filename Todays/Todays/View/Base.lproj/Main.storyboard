@@ -83,7 +83,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-0g-H03" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UFq-Sp-ETG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="173"/>
+            <point key="canvasLocation" x="1877" y="-400"/>
         </scene>
         <!--ArticleDetails-->
         <scene sceneID="bOL-ZA-iUc">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA5-aa-ctN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="201"/>
+            <point key="canvasLocation" x="2850" y="-400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hMC-qa-cMP">
@@ -149,7 +149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-SR-cKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569.375" y="-610.56338028169012"/>
+            <point key="canvasLocation" x="1622" y="-1201"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="zGk-MG-tnv">
@@ -159,39 +159,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASq-ES-O3v">
-                                <rect key="frame" x="122" y="79" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Las Cruces"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suX-bN-Dae">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
-                                    <segue destination="5jI-NC-ydG" kind="show" identifier="LCNewsFeedSegue" id="IrK-3t-Kiu"/>
+                                    <outlet property="delegate" destination="uJh-Qa-l5y" id="EgO-d6-wKc"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv4-My-CGq">
-                                <rect key="frame" x="116" y="341" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Albuquerque"/>
-                                <connections>
-                                    <segue destination="5jI-NC-ydG" kind="show" identifier="ABNewsFeedSegue" id="MQn-bJ-eVn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rp5-g1-wDa">
-                                <rect key="frame" x="138" y="208" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ElPaso"/>
-                                <connections>
-                                    <segue destination="5jI-NC-ydG" kind="show" identifier="ELPNewsFeedSegue" id="UvX-oe-9H5"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="bottom" secondItem="c7a-Ld-C8M" secondAttribute="bottom" id="4hh-MW-crr"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="trailing" secondItem="c7a-Ld-C8M" secondAttribute="trailing" id="5cc-OD-gMK"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="top" secondItem="oMB-64-c9x" secondAttribute="top" id="83n-jF-iIw"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="leading" secondItem="c7a-Ld-C8M" secondAttribute="leading" id="oY3-u5-xqK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="c7a-Ld-C8M"/>
                     </view>
                     <navigationItem key="navigationItem" id="rHg-bS-2g5"/>
+                    <connections>
+                        <outlet property="mapView" destination="suX-bN-Dae" id="wRf-Cz-6K0"/>
+                        <segue destination="5jI-NC-ydG" kind="show" identifier="LCNewsFeedSegue" id="n23-l6-iQz"/>
+                        <segue destination="5jI-NC-ydG" kind="show" identifier="ABNewsFeedSegue" id="NLX-Ed-2WM"/>
+                        <segue destination="5jI-NC-ydG" kind="show" identifier="ELPNewsFeedSegue" id="0GV-YA-kWf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMb-xE-tJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92" y="-71"/>
+            <point key="canvasLocation" x="621" y="346"/>
         </scene>
         <!--Menu-->
         <scene sceneID="RWL-Im-KVZ">
@@ -235,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJO-vO-oDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734" y="993"/>
+            <point key="canvasLocation" x="2799" y="600"/>
         </scene>
         <!--Weather-->
         <scene sceneID="MYh-O0-H6N">
@@ -281,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKn-rV-L0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461.25" y="1764.0845070422536"/>
+            <point key="canvasLocation" x="-354" y="1430"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Rtr-r4-2Kd">
@@ -302,7 +296,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdw-9g-mvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="1015"/>
+            <point key="canvasLocation" x="1924" y="600"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="nqL-fv-h1R">
@@ -336,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r31-h7-EQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="2029"/>
+            <point key="canvasLocation" x="692" y="1900"/>
         </scene>
         <!--Pics-->
         <scene sceneID="0vG-Np-8aY">
@@ -370,13 +364,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2A1-4C-k2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-954" y="929"/>
+            <point key="canvasLocation" x="2109" y="1812"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="09d-Mo-90X"/>
-        <segue reference="4eM-ZM-w2z"/>
-        <segue reference="MQn-bJ-eVn"/>
-        <segue reference="6xl-DH-fHh"/>
+        <segue reference="a0B-ig-knY"/>
+        <segue reference="5ut-Dj-NQz"/>
+        <segue reference="0GV-YA-kWf"/>
+        <segue reference="c7W-eF-XZ5"/>
     </inferredMetricsTieBreakers>
 </document>
