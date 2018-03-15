@@ -31,7 +31,7 @@
                                 <items>
                                     <navigationItem id="HyQ-oW-omW">
                                         <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mCm-HF-T6S">
                                             <rect key="frame" x="20.5" y="7.5" width="279" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -60,7 +60,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VFj-Re-9cS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="News Feed" id="DLw-NK-LGo">
+                    <navigationItem key="navigationItem" title="Local News Feed" id="DLw-NK-LGo">
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="9Tj-AS-Od8">
                             <connections>
                                 <segue destination="b4x-yV-onb" kind="presentation" identifier="ShowMenuFromNewsFeedSegue" id="b43-LA-eCy"/>
@@ -391,8 +391,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M7B-0s-Wv8"/>
-        <segue reference="wsB-fN-n8n"/>
+        <segue reference="b43-LA-eCy"/>
+        <segue reference="7UA-OH-3p7"/>
         <segue reference="0GV-YA-kWf"/>
         <segue reference="c7W-eF-XZ5"/>
     </inferredMetricsTieBreakers>

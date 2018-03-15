@@ -24,8 +24,6 @@ struct lasCrucesRSS{
     static let politics = "https://news.google.com/news/rss/search/section/q/las%20cruces%20politics%20news/las%20cruces%20politics%20news?hl=en&gl=US&ned=us"
    
     static let economics = "https://news.google.com/news/rss/search/section/q/las%20cruces%20economics/las%20cruces%20economics?hl=en&gl=US&ned=us"
-    
-    static let NMSU = "https://newscenter.nmsu.edu/Articles/news"
 }
 
 struct elPasoRSS{
@@ -48,7 +46,13 @@ struct albuquerqueRSS{
     static let economics = "https://news.google.com/news/rss/search/section/q/albuquerque%20economics%20news/albuquerque%20economics%20news?hl=en&gl=US&ned=us"
 }
 
-
+struct NMSURSS{
+    static let general = "https://newscenter.nmsu.edu/Articles/news"
+    
+    static let student = "https://news.google.com/news/rss/search/section/q/NMSU%20student%20news/NMSU%20student%20news?hl=en&gl=US&ned=us"
+    
+    static let sports = "https://news.google.com/news/rss/search/section/q/NMSU%20sports%20news/NMSU%20sports%20news?hl=en&gl=US&ned=us"
+}
 
 struct weatherAPI{
     static let lasCruces = "http://api.apixu.com/v1/current.xml?key=57096343fae94802969223357181203&q=Las%20Cruces"
@@ -59,10 +63,11 @@ struct weatherAPI{
 }
 
 struct sideMenuContsants{
-    static let firstSelection = "Local News"
-    static let secondSelection = "Local Resturants"
-    static let thirdSelection = "Cool Local Pics"
-    static let fourthSelection = "Local Weather"
+    static let localNews = "Local News"
+    static let localResturants = "Local Resturants"
+    static let localPics = "Cool Local Pics"
+    static let localWeather = "Local Weather"
+    static let NMSU = "NMSU News"
 }
 
 struct LasCrucesMapAnnotations{
@@ -90,7 +95,9 @@ struct AlbuquerqueMapAnnotations{
 
 struct Restuaurants{
     static let lasCruces = "https://api.yelp.com/v3/businesses/search?term=dinner&location=Las%20Cruces,New%20Mexico&limit=50"
+    
     static let elpaso = "https://api.yelp.com/v3/businesses/search?term=dinner&location=El%20Paso,Texas&limit=50"
+    
     static let albuquerque = "https://api.yelp.com/v3/businesses/search?term=dinner&location=Albuquerque,New%20Mexico&limit=50"
 }
 

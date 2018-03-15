@@ -16,21 +16,22 @@ class RSSFeedViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     var currentCity: Int = 0
+    var didSelectNMSU = false
     var isLoading = false
     var rssItems = [RSSFeedItemResult]()
     var currentLink = ""
     var networkManager = Networking()
-    var isNMSULink = false
-    
-    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         registerTheNibs()
         fetchData(to: segmentedControl.selectedSegmentIndex)
-        if (currentCity == 0){
+        if (didSelectNMSU){
             replaceSegments()
+            self.title = "NMSU News Feed"
         }
         
         
@@ -42,11 +43,14 @@ class RSSFeedViewController: UIViewController {
         
         cellNib = UINib(nibName: CellIdentifiers.loadingFeedCell , bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.loadingFeedCell)
-   
     }
     
     func replaceSegments() {
-         segmentedControl.insertSegment(withTitle: "NMSU", at: 4, animated: false)
+        segmentedControl.removeAllSegments()
+        segmentedControl.insertSegment(withTitle: "General", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "Student", at: 1, animated: false)
+        segmentedControl.insertSegment(withTitle: "Sports", at: 2, animated: false)
+        segmentedControl.selectedSegmentIndex = 0
     }
     
    
@@ -58,14 +62,17 @@ class RSSFeedViewController: UIViewController {
     func fetchData(to section: Int){
         
         isLoading = true
-        isNMSULink = true
         tableView.reloadData()
         
         var myUrl : String
         
         switch section {
         case 0:
-            switch currentCity{
+            if (didSelectNMSU){
+                myUrl = NMSURSS.general
+                break
+            }
+          switch currentCity{
             case 0:
                 myUrl = lasCrucesRSS.general
             case 1:
@@ -74,9 +81,12 @@ class RSSFeedViewController: UIViewController {
                 myUrl = albuquerqueRSS.general
             default:
                  myUrl = ""
-            }
-          
+                }
         case 1:
+            if (didSelectNMSU){
+                myUrl = NMSURSS.student
+                break
+            }
             switch currentCity{
             case 0:
                 myUrl = lasCrucesRSS.sports
@@ -87,8 +97,12 @@ class RSSFeedViewController: UIViewController {
             default:
                  myUrl = ""
             }
-            
         case 2:
+            if (didSelectNMSU){
+                myUrl = NMSURSS.sports
+                break
+            }
+            else{
             switch currentCity{
             case 0:
                 myUrl = lasCrucesRSS.politics
@@ -99,7 +113,7 @@ class RSSFeedViewController: UIViewController {
             default:
                  myUrl = ""
             }
-            
+        }
         case 3:
             switch currentCity{
             case 0:
@@ -111,9 +125,6 @@ class RSSFeedViewController: UIViewController {
             default:
                 myUrl = ""
             }
-        case 4:
-           myUrl = lasCrucesRSS.NMSU
-           isNMSULink = true
         default:
             myUrl = ""
         }
@@ -174,7 +185,7 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
          currentLink = rssItems[indexPath.row].link
-        if(isNMSULink){
+        if(didSelectNMSU && segmentedControl.selectedSegmentIndex == 0){
            currentLink = currentLink.components(separatedBy: .whitespacesAndNewlines).joined()
         }
         performSegue(withIdentifier: "ArticleDetailsSegue", sender: RSSFeedItemCell.self)

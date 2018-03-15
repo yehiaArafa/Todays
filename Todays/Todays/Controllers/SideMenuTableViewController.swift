@@ -12,16 +12,23 @@ class SideMenuTableViewController: UITableViewController {
 
    var sideMenuOptions = [String]()
    var currentCity = 0
+    var didSelectNMSU = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenuOptions.append(sideMenuContsants.firstSelection)
-        sideMenuOptions.append(sideMenuContsants.secondSelection)
-        sideMenuOptions.append(sideMenuContsants.thirdSelection)
-        sideMenuOptions.append(sideMenuContsants.fourthSelection)
+        addMenuOptions()
     }
 
- 
+    func addMenuOptions(){
+        sideMenuOptions.append(sideMenuContsants.localNews)
+        if(currentCity == 0){
+            sideMenuOptions.append(sideMenuContsants.NMSU)
+        }
+        sideMenuOptions.append(sideMenuContsants.localResturants)
+        sideMenuOptions.append(sideMenuContsants.localWeather)
+        sideMenuOptions.append(sideMenuContsants.localPics)
+    }
+
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,19 +46,22 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if (indexPath.row == 0){
-            performSegue(withIdentifier: "FeedSegue", sender: RSSFeedItemCell.self)
-        }
-        else if (indexPath.row == 1){
-            performSegue(withIdentifier: "RestaurantsSegue", sender: RSSFeedItemCell.self)
-        }
-        else if (indexPath.row == 2){
-            performSegue(withIdentifier: "PicsSegue", sender: RSSFeedItemCell.self)
-        }
-        else if (indexPath.row == 3){
-            performSegue(withIdentifier: "WeatherSegue", sender: RSSFeedItemCell.self)
-        }
         
+        switch sideMenuOptions[indexPath.row] {
+        case sideMenuContsants.localNews:
+            performSegue(withIdentifier: "FeedSegue", sender: RSSFeedItemCell.self)
+        case sideMenuContsants.NMSU:
+            didSelectNMSU = true
+            performSegue(withIdentifier: "FeedSegue", sender: RSSFeedItemCell.self)
+        case sideMenuContsants.localResturants:
+            performSegue(withIdentifier: "RestaurantsSegue", sender: RSSFeedItemCell.self)
+        case sideMenuContsants.localWeather:
+             performSegue(withIdentifier: "WeatherSegue", sender: RSSFeedItemCell.self)
+        case sideMenuContsants.localPics:
+            performSegue(withIdentifier: "PicsSegue", sender: RSSFeedItemCell.self)
+        default:
+            return
+        }
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -67,20 +77,16 @@ class SideMenuTableViewController: UITableViewController {
         if (segue.identifier == "WeatherSegue") {
             let destinationNavigationController = segue.destination as! weatherViewController
             destinationNavigationController.currentCity = currentCity
-            
         }
-        else if (segue.identifier == "FeedSegue") {
+        else if (segue.identifier == "FeedSegue" && didSelectNMSU) {
             let destinationNavigationController = segue.destination as! RSSFeedViewController
             destinationNavigationController.currentCity = currentCity
-            
+            destinationNavigationController.didSelectNMSU = true
         }
         else if (segue.identifier == "RestaurantsSegue") {
             let destinationNavigationController = segue.destination as! RestaurantsViewController
             destinationNavigationController.currentCity = currentCity
-            
         }
-        
-        
     }
 
 }
