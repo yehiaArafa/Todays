@@ -12,6 +12,7 @@ struct CellIdentifiers {
     static let RSSFeedItemCell = "RSSFeedItemCell"
     static let loadingFeedCell = "LoadingFeedCell"
     static let WeatherCell = "WeatherCell"
+    static let RestaurantsCell = "RestaurantsCell"
     
 }
 
@@ -86,6 +87,14 @@ struct AlbuquerqueMapAnnotations{
     static let locationName = "New Mexico"
     static let discipline = "sculpture"
 }
+
+struct Restuaurants{
+    static let lasCruces = "https://api.yelp.com/v3/businesses/search?term=dinner&location=Las%20Cruces,New%20Mexico&limit=50"
+    static let elpaso = "https://api.yelp.com/v3/businesses/search?term=dinner&location=El%20Paso,Texas&limit=50"
+    static let albuquerque = "https://api.yelp.com/v3/businesses/search?term=dinner&location=Albuquerque,New%20Mexico&limit=50"
+}
+
+let YelpApikey = "Bearer KelsEo_qOFPUQrvNlBae9z_10UJfxfjE-LnO6duaZVk1q2Iad8ylSEH89UyQy3SzuvBogQcDsZvuWtoxjqTSyV-cpD_Gs4UEhRdAH5NW1CvvWg35Cjoij0SL16apWnYx"
 
 
 

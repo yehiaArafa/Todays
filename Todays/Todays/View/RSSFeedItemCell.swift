@@ -40,8 +40,5 @@ class RSSFeedItemCell: UITableViewCell {
         if let imageURL = URL(string: searchResult.imageURL) {
             downloadTask = rssImage.getImage(url: imageURL)
         }
-        
-        
-        
     }
 }

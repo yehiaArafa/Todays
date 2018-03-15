@@ -20,6 +20,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         zoomMap()
         updatePins()
+        
+        
     }
     
     

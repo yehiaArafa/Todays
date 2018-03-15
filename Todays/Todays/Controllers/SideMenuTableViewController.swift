@@ -69,11 +69,17 @@ class SideMenuTableViewController: UITableViewController {
             destinationNavigationController.currentCity = currentCity
             
         }
-        if (segue.identifier == "FeedSegue") {
+        else if (segue.identifier == "FeedSegue") {
             let destinationNavigationController = segue.destination as! RSSFeedViewController
             destinationNavigationController.currentCity = currentCity
             
         }
+        else if (segue.identifier == "RestaurantsSegue") {
+            let destinationNavigationController = segue.destination as! RestaurantsViewController
+            destinationNavigationController.currentCity = currentCity
+            
+        }
+        
         
     }
 

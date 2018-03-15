@@ -27,7 +27,7 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
     var task: URLSessionDataTask?
     
     //Networking will be refactored to the Network class
-    func parseFeed(url: URL, CompletionHandler: ((WeatherCityResult) -> Void)? ){
+    func parseWeather(url: URL, CompletionHandler: ((WeatherCityResult) -> Void)? ){
         
         self.parserCompletionHandler = CompletionHandler
         task?.cancel()
@@ -93,7 +93,7 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
             weatherItem.temperature_c = tempC
             weatherItem.temperature_f = tempF
             weatherItem.weatherCondition = conditionText
-            weatherItem.iconLink = iconLink
+            weatherItem.iconLink = parseIconLink(iconLink: iconLink)
         }
         
     }
@@ -108,6 +108,11 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
         print(parseError.localizedDescription)
     }
     
-   
+    func parseIconLink(iconLink: String)-> String{
+        var words = iconLink.components(separatedBy: " ")
+        words[0].removeFirst(2)
+        return String(describing: words)
+    }
+    
     
 }

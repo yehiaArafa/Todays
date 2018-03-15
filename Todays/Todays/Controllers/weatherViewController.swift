@@ -24,7 +24,6 @@ class weatherViewController: UIViewController {
         weatherTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         registerTheNibs()
         //fetchData()
-       //print(weatherTableView.bounds.height / 2)
          weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 3 - 40, left: 0 , bottom: 0, right: 20)
     }
 
@@ -57,7 +56,7 @@ class weatherViewController: UIViewController {
     func fetchData(){
         
         let url: URL
-        
+     
         switch currentCity {
         case 0:
              url = networkManager.prepareURL(urlString: weatherAPI.lasCruces)
@@ -70,8 +69,8 @@ class weatherViewController: UIViewController {
         }
        
         
-        let feedParser = XMLWeatherParser()
-        feedParser.parseFeed(url: url){
+        let parser = XMLWeatherParser()
+        parser.parseWeather(url: url){
             (item) in
             self.weatherItem = item
             DispatchQueue.main.async {
@@ -93,17 +92,16 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
     
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //
-//
 //        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
-//        cell.setLabel(currentCity: weatherItem.cityName, currentIcon: "icon", currentWeather: weatherItem.temperature_f)
+//        cell.setLabel(currentCity: weatherItem.cityName, currentIconLink: weatherItem.iconLink , currentWeather: weatherItem.temperature_f)
 //
 //        return cell
 //    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath)
-        
+
         return cell
     }
     
@@ -112,8 +110,8 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tHeight = tableView.bounds.height / 2
-        return tHeight
+        //let tHeight = tableView.bounds.height / 2
+        return 252
     }
    
     

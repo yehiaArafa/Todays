@@ -11,6 +11,7 @@ import UIKit
 
 class Networking{
     
+    var task: URLSessionDataTask?
     
     func prepareURL(urlString: String) -> URL{
         let url = URL(string: urlString)
@@ -22,9 +23,7 @@ class Networking{
         return urlRequest
     }
     
-   
 }
-
 
 extension UIImageView {
     
