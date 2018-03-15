@@ -12,11 +12,14 @@ class RSSFeedItemCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rssImage: UIImageView!
+    @IBOutlet weak var date: UILabel!
+    
     var downloadTask: URLSessionDownloadTask?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        rssImage.layer.cornerRadius = 3
+        rssImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,8 +35,10 @@ class RSSFeedItemCell: UITableViewCell {
     }
     
     func setLabels(for searchResult: RSSFeedItemResult){
-         titleLabel.text = searchResult.title
-         titleLabel.numberOfLines = 0
+        let trimmed = searchResult.title.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
+        titleLabel.text = trimmed
+        titleLabel.numberOfLines = 0
+        date.text = searchResult.parsedDate
         
         //some networking will be refactored to the Network class
         rssImage.image = UIImage(named: "breakingNews")

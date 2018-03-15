@@ -25,7 +25,8 @@ class RSSFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 118
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         registerTheNibs()
         fetchData(to: segmentedControl.selectedSegmentIndex)

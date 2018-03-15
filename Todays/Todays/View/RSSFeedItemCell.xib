@@ -12,38 +12,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RSSFeedItemCell" rowHeight="168" id="Ss9-dc-PTJ" customClass="RSSFeedItemCell" customModule="Todays" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ss9-dc-PTJ" id="Me5-pN-749">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="aad-eo-IVT">
                         <rect key="frame" x="10" y="10" width="90" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="znl-CH-MeE"/>
+                            <constraint firstAttribute="height" constant="60" id="FNI-az-1jS"/>
+                            <constraint firstAttribute="width" constant="90" id="gfb-Rt-Ivd"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKp-dD-cBA">
-                        <rect key="frame" x="120" y="10" width="190" height="59.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="190" id="sjg-zk-GsL"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NMSU online public health masters program named among best in the nation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKp-dD-cBA">
+                        <rect key="frame" x="113" y="10" width="199" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri, 16 Feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjL-ft-1Yp">
+                        <rect key="frame" x="7" y="77" width="91" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.47271573604060912" green="0.47271573604060912" blue="0.47271573604060912" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aad-eo-IVT" firstAttribute="top" secondItem="Me5-pN-749" secondAttribute="top" constant="10" id="5sa-AW-gMF"/>
-                    <constraint firstItem="aKp-dD-cBA" firstAttribute="top" secondItem="Me5-pN-749" secondAttribute="top" constant="10" id="Pd7-aC-kfo"/>
-                    <constraint firstItem="aad-eo-IVT" firstAttribute="leading" secondItem="Me5-pN-749" secondAttribute="leading" constant="10" id="RhP-2Q-fh1"/>
-                    <constraint firstAttribute="bottom" secondItem="aad-eo-IVT" secondAttribute="bottom" constant="10" id="bAy-yf-CWh"/>
-                    <constraint firstAttribute="trailing" secondItem="aKp-dD-cBA" secondAttribute="trailing" constant="10" id="gOh-F7-lmD"/>
-                    <constraint firstAttribute="bottom" secondItem="aKp-dD-cBA" secondAttribute="bottom" constant="10" id="sN4-8L-HT4"/>
+                    <constraint firstItem="aad-eo-IVT" firstAttribute="top" secondItem="Me5-pN-749" secondAttribute="top" constant="10" id="4Sv-OV-1db"/>
+                    <constraint firstItem="aKp-dD-cBA" firstAttribute="top" secondItem="aad-eo-IVT" secondAttribute="top" id="FjS-TX-hyW"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GjL-ft-1Yp" secondAttribute="bottom" constant="6.5" id="FvG-Be-StL"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aKp-dD-cBA" secondAttribute="bottom" constant="6.5" id="Iw8-ma-lyc"/>
+                    <constraint firstItem="GjL-ft-1Yp" firstAttribute="leading" secondItem="Me5-pN-749" secondAttribute="leading" constant="7" id="cTt-R5-7hX"/>
+                    <constraint firstAttribute="trailing" secondItem="aKp-dD-cBA" secondAttribute="trailing" constant="8" id="cem-uG-mG9"/>
+                    <constraint firstItem="aad-eo-IVT" firstAttribute="leading" secondItem="Me5-pN-749" secondAttribute="leading" constant="10" id="j85-E7-Tft"/>
+                    <constraint firstItem="aKp-dD-cBA" firstAttribute="leading" secondItem="aad-eo-IVT" secondAttribute="trailing" constant="13" id="shL-aA-kgR"/>
+                    <constraint firstItem="GjL-ft-1Yp" firstAttribute="top" secondItem="aad-eo-IVT" secondAttribute="bottom" constant="7" id="uQg-ZJ-Sza"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="date" destination="GjL-ft-1Yp" id="OgC-h2-KxT"/>
                 <outlet property="rssImage" destination="aad-eo-IVT" id="8Cr-oA-bnw"/>
                 <outlet property="titleLabel" destination="aKp-dD-cBA" id="9TP-24-Ex2"/>
             </connections>
