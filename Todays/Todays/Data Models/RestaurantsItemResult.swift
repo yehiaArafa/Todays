@@ -20,7 +20,7 @@ class RestuaurantsItemResultArray:Codable{
 class RestuaurantsItemResult:Codable{
     
     var rating = 0.0
-    var price = ""
+    var price:String!
     var phone = ""
     var categories = [RestuaurantsItemResultCategory]()
     var review_count = 0
@@ -34,7 +34,12 @@ class RestuaurantsItemResult:Codable{
     }
     
     var priceRange:String{
-        return price
+        if let myPrice = price{
+           return myPrice
+        }
+        else{
+          return "$"
+        }
     }
     
     var phoneNumber:String{

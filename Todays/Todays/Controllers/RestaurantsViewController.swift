@@ -20,6 +20,8 @@ class RestaurantsViewController: UIViewController {
         super.viewDidLoad()
         registerTheNibs()
         fetchData()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 118
     }
     
     func registerTheNibs(){
@@ -128,12 +130,16 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 125
+//    }
+    
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if resturantsResults.count == 0 || isLoading {
+        if (resturantsResults.count == 0 || isLoading) {
             return nil
         } else {
             return indexPath

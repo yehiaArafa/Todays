@@ -28,6 +28,7 @@ class RestuaurantsCell: UITableViewCell {
         resturantImage.clipsToBounds = true
         ratingsImage.layer.cornerRadius = 3
         ratingsImage.clipsToBounds = true
+        type.adjustsFontSizeToFitWidth = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
