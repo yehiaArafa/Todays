@@ -67,12 +67,12 @@ class ArticleDetailsViewController: UIViewController {
                 timer.invalidate()
             }
             else{
-                progressBar.progress += 0.1
+                progressBar.progress += 0.05
             }
         }
         else{
             progressBar.progress += 0.05
-            if (progressBar.progress >= 0.95){
+            if (progressBar.progress >= 0.85){
                  progressBar.progress = 0.95
             }
         }
