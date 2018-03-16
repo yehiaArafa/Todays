@@ -24,6 +24,7 @@ class WeatherCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        weather.font = UIFont(name: "DINCondensed-Bold", size: 42)!
     }
 
     
@@ -74,6 +75,47 @@ class WeatherCell: UITableViewCell {
             format.image = UIImage(named: "fahrenheit")
         }
       
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        date_number.text = String(day)
+        let stringMonth = mapMonth(month: String(month))
+        date_day.text = stringMonth
     }
+ 
+    func mapMonth(month: String)->String{
+        switch(month){
+        case "1":
+            return "Jan"
+        case "2":
+            return "Feb"
+        case "3":
+            return "Mar"
+        case "4":
+            return "Apr"
+        case "5":
+            return "May"
+        case "6":
+            return "Jun"
+        case "7":
+            return "Jul"
+        case "8":
+            return "Aug"
+        case "9":
+            return "Sep"
+        case "10":
+            return "Oct"
+        case "11":
+            return "Nov"
+        case "12":
+            return "Dec"
+        default:
+            return ""
+        }
+    }
+    
+    
     
 }

@@ -12,10 +12,12 @@ class weatherViewController: UIViewController {
 
 
     @IBOutlet weak var weatherTableView: UITableView!
+    @IBOutlet weak var tabBar: UITabBar!
     
     var networkManager = Networking()
     var weatherItem = WeatherCityResult()
     var currentCity = 0
+    var isCelsius = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,14 @@ class weatherViewController: UIViewController {
         registerTheNibs()
         weatherTableView.allowsSelection = false;
         fetchData()
-        weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 2, left: 0 , bottom: 0, right: 0)
+        weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 3, left: 0 , bottom: 0, right: 0)
         setNavigationBarTitle()
+        
+        tabBar.selectedItem = tabBar.items![1]
+       
     }
 
+    
     override func viewWillAppear(_ animated: Bool) {
       
         super.viewWillAppear(animated)
@@ -108,7 +114,7 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
-        cell.setLabels(for: weatherItem, currentCity: currentCity, celsius: false)
+        cell.setLabels(for: weatherItem, currentCity: currentCity, celsius: isCelsius)
 
         return cell
     }
@@ -121,7 +127,7 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor(red:220/250, green:220/250, blue:220/250, alpha: 0.5)
+        cell.backgroundColor = UIColor(red:220/250, green:220/250, blue:220/250, alpha: 0.2)
         //cell.layer.backgroundColor = UIColor.clear.cgColor
     }
     
@@ -140,4 +146,22 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 
+}
+
+extension weatherViewController: UITabBarDelegate{
+    
+    
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if(item.tag == 105){
+            isCelsius = false
+            weatherTableView.reloadData()
+        }
+        else{
+            isCelsius = true
+            weatherTableView.reloadData()
+        }
+        
+    }
+    
 }

@@ -250,7 +250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-Ni-BXW" userLabel="weatherTableView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -258,6 +258,17 @@
                                     <outlet property="delegate" destination="de8-BM-8yq" id="mck-JQ-uBP"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RL1-6N-fR5">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem tag="106" title="" image="celsius_icon" selectedImage="celsius_icon" id="xgT-g4-3qF"/>
+                                    <tabBarItem tag="105" image="fahrenheit_icon" id="kId-hE-XeH"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="de8-BM-8yq" id="1w0-iL-BbL"/>
+                                </connections>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dVJ-PU-Tsn"/>
@@ -275,6 +286,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tabBar" destination="RL1-6N-fR5" id="jtL-pm-NEw"/>
                         <outlet property="weatherTableView" destination="Uoe-Ni-BXW" id="cHX-r8-PtT"/>
                     </connections>
                 </viewController>
@@ -404,6 +416,8 @@
     </scenes>
     <resources>
         <image name="ImagePlaceHolder" width="60" height="60"/>
+        <image name="celsius_icon" width="25" height="25"/>
+        <image name="fahrenheit_icon" width="25" height="25"/>
         <image name="menuButton" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
