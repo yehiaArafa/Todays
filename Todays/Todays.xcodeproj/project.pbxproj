@@ -11,7 +11,6 @@
 		0C41A5A32057198A00E042F3 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A22057198A00E042F3 /* WeatherCell.swift */; };
 		0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */; };
 		0C41A5A7205739E600E042F3 /* XMLWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */; };
-		0C41A5A92057875600E042F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C41A5A82057875600E042F3 /* Images.xcassets */; };
 		0C41A5B020586A6D00E042F3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C41A5AE20585E3900E042F3 /* MapKit.framework */; };
 		0C41A5C920588A2100E042F3 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41A5C820588A2100E042F3 /* MapLocation.swift */; };
 		0C41A5CB2059D10400E042F3 /* RestaurantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C41A5CA2059D10400E042F3 /* RestaurantsCell.xib */; };
@@ -31,6 +30,7 @@
 		0C644A722055E11300F514A2 /* weatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A712055E11300F514A2 /* weatherViewController.swift */; };
 		0C644A742055E34B00F514A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A732055E34B00F514A2 /* MapViewController.swift */; };
 		0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */; };
+		0C644BEA205B72EB00342EC3 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C644BE9205B72EB00342EC3 /* images.xcassets */; };
 		0C82BE6D2050EECC00B9667C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C82BE6C2050EECC00B9667C /* AppDelegate.swift */; };
 		0C82BE722050EECC00B9667C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE702050EECC00B9667C /* Main.storyboard */; };
 		0C82BE772050EECC00B9667C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C82BE752050EECC00B9667C /* LaunchScreen.storyboard */; };
@@ -42,7 +42,6 @@
 		0C41A5A22057198A00E042F3 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		0C41A5A420572AB800E042F3 /* WeatherCityResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityResult.swift; sourceTree = "<group>"; };
 		0C41A5A6205739E600E042F3 /* XMLWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLWeatherParser.swift; sourceTree = "<group>"; };
-		0C41A5A82057875600E042F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C41A5AE20585E3900E042F3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0C41A5C820588A2100E042F3 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		0C41A5CA2059D10400E042F3 /* RestaurantsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantsCell.xib; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		0C644A712055E11300F514A2 /* weatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherViewController.swift; sourceTree = "<group>"; };
 		0C644A732055E34B00F514A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		0C644BE9205B72EB00342EC3 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		0C82BE692050EECC00B9667C /* Todays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C82BE6C2050EECC00B9667C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C82BE712050EECC00B9667C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		0C82BE602050EECC00B9667C = {
 			isa = PBXGroup;
 			children = (
-				0C41A5A82057875600E042F3 /* Images.xcassets */,
+				0C644BE9205B72EB00342EC3 /* images.xcassets */,
 				0C82BE6B2050EECC00B9667C /* Todays */,
 				0C82BE6A2050EECC00B9667C /* Products */,
 				0EFCFE3DFF7D7ACE8120E377 /* Pods */,
@@ -263,10 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C82BE772050EECC00B9667C /* LaunchScreen.storyboard in Resources */,
+				0C644BEA205B72EB00342EC3 /* images.xcassets in Resources */,
 				0C82BE722050EECC00B9667C /* Main.storyboard in Resources */,
 				0C41A5CB2059D10400E042F3 /* RestaurantsCell.xib in Resources */,
 				0C644A422054497D00F514A2 /* LoadingFeedCell.xib in Resources */,
-				0C41A5A92057875600E042F3 /* Images.xcassets in Resources */,
 				0C41A59F20570CD800E042F3 /* WeatherCell.xib in Resources */,
 				0C644A362053532F00F514A2 /* RSSFeedItemCell.xib in Resources */,
 			);

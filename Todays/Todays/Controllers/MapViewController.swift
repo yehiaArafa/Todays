@@ -19,9 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         zoomMap()
-        updatePins()
-        
-        
+        updatePins()  
     }
     
     
@@ -104,8 +102,7 @@ extension MapViewController: MKMapViewDelegate {
             pinView.isEnabled = true
             pinView.canShowCallout = true
             pinView.animatesDrop = false
-            pinView.pinTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
-            
+            pinView.pinTintColor = UIColor(red: 140/255, green: 11/255, blue: 66/255, alpha: 1)
             
             let rightButton = UIButton(type: .detailDisclosure)
             rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)

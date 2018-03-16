@@ -20,6 +20,10 @@ class RSSFeedItemCell: UITableViewCell {
         super.awakeFromNib()
         rssImage.layer.cornerRadius = 3
         rssImage.clipsToBounds = true
+        let selectedView = UIView(frame: CGRect.zero)
+        selectedView.backgroundColor = UIColor(red: 140/255, green: 11/255, blue: 66/255, alpha: 1)
+        selectedBackgroundView = selectedView
+        titleLabel.font = UIFont(name: "DINAlternate-Bold", size: 16)!
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

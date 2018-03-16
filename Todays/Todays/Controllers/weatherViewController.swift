@@ -25,6 +25,7 @@ class weatherViewController: UIViewController {
         registerTheNibs()
         //fetchData()
          weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 3 - 40, left: 0 , bottom: 0, right: 20)
+        setNavigationBarTitle()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +46,19 @@ class weatherViewController: UIViewController {
         let imageView = UIImageView(image: backgroundImage)
         weatherTableView.backgroundView = imageView
         
+    }
+    
+    func setNavigationBarTitle(){
+        switch currentCity{
+        case 0:
+            self.title = "Las Cruces Weather"
+        case 1:
+            self.title = "El Paso Weather"
+        case 2:
+            self.title = "Albuquerque Weather"
+        default:
+            self.title = "Weather"
+        }
     }
     
     func registerTheNibs(){

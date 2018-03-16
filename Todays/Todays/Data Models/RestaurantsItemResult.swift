@@ -47,7 +47,7 @@ class RestuaurantsItemResult:Codable{
     }
     
     var type:String{
-        return categories[0].title
+        return categories[0].alias
     }
     
     var NumberOfReviews:Int{
@@ -84,9 +84,9 @@ class RestuaurantsItemResultLocation:Codable{
 
 class RestuaurantsItemResultCategory:Codable{
     
-    var title = ""
+    var alias = ""
     
     var type:String{
-        return title
+        return alias
     }
 }

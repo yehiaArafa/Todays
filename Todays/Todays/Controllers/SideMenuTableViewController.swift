@@ -10,8 +10,8 @@ import UIKit
 
 class SideMenuTableViewController: UITableViewController {
 
-   var sideMenuOptions = [String]()
-   var currentCity = 0
+    var sideMenuOptions = [String]()
+    var currentCity = 0
     var didSelectNMSU = false
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class SideMenuTableViewController: UITableViewController {
         }
         sideMenuOptions.append(sideMenuContsants.localResturants)
         sideMenuOptions.append(sideMenuContsants.localWeather)
-        sideMenuOptions.append(sideMenuContsants.localPics)
+        //sideMenuOptions.append(sideMenuContsants.localPics)
     }
 
     // MARK: - Table view data source
@@ -39,8 +39,27 @@ class SideMenuTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuSelectionCell", for: indexPath)
         
         let label = cell.viewWithTag(1001) as! UILabel
+        label.font = UIFont(name: "Avenir-BlackOblique", size: 18)!
         label.text = sideMenuOptions[indexPath.row]
+        let labelIm = cell.viewWithTag(110) as! UIImageView
+        
+        switch sideMenuOptions[indexPath.row]{
+        case sideMenuContsants.localWeather:
+             labelIm.image = UIImage(named: "temperature")
+        case sideMenuContsants.localNews:
+            labelIm.image = UIImage(named: "newspaper")
+        case sideMenuContsants.localResturants:
+            labelIm.image = UIImage(named: "food")
+        case sideMenuContsants.NMSU:
+            labelIm.image = UIImage(named: "NMState")
+        default:
+             labelIm.image = UIImage(named: "ImagePlaceHolder")
+        }
        
+        let selectedView = UIView(frame: CGRect.zero)
+        selectedView.backgroundColor = UIColor(red: 140/255, green: 11/255, blue: 66/255, alpha: 1)
+        cell.selectedBackgroundView = selectedView
+        
         return cell
     }
     
@@ -78,10 +97,12 @@ class SideMenuTableViewController: UITableViewController {
             let destinationNavigationController = segue.destination as! weatherViewController
             destinationNavigationController.currentCity = currentCity
         }
-        else if (segue.identifier == "FeedSegue" && didSelectNMSU) {
+        else if (segue.identifier == "FeedSegue") {
             let destinationNavigationController = segue.destination as! RSSFeedViewController
             destinationNavigationController.currentCity = currentCity
-            destinationNavigationController.didSelectNMSU = true
+            if(didSelectNMSU){
+                destinationNavigationController.didSelectNMSU = true
+            }
         }
         else if (segue.identifier == "RestaurantsSegue") {
             let destinationNavigationController = segue.destination as! RestaurantsViewController

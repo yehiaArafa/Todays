@@ -13,8 +13,11 @@ import UIKit
 class RSSFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
+    @IBOutlet weak var toolBar: UIToolbar!
+    
     var currentCity: Int = 0
     var didSelectNMSU = false
     var isLoading = false
@@ -27,15 +30,30 @@ class RSSFeedViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 118
-        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         registerTheNibs()
+        setNavigationBarTitle()
         fetchData(to: segmentedControl.selectedSegmentIndex)
+        setSegmentedControlShape()
+    }
+    
+    
+    func setNavigationBarTitle(){
         if (didSelectNMSU){
             replaceSegments()
             self.title = "NMSU News Feed"
+            return
         }
         
-        
+        switch currentCity{
+            case 0:
+                self.title = "Las Cruces News Feed"
+            case 1:
+                self.title = "El Paso News Feed"
+            case 2:
+                self.title = "Albuquerque News Feed"
+            default:
+                self.title = "News Feed"
+        }
     }
     
     func registerTheNibs(){
@@ -59,12 +77,23 @@ class RSSFeedViewController: UIViewController {
         fetchData(to: segmentedControl.selectedSegmentIndex)
     }
     
-
+    func setSegmentedControlShape(){
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18)!,
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray
+            ], for: .normal)
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18)!, NSAttributedStringKey.foregroundColor: UIColor(red: 140/255, green: 11/255, blue: 66/255, alpha: 1)
+            ], for: .selected)
+    }
+    
     func fetchData(to section: Int){
         
         isLoading = true
         tableView.reloadData()
-        
+       
         var myUrl : String
         
         switch section {

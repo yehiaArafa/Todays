@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        customizeAppearance()
         return true
     }
 
@@ -42,6 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func customizeAppearance() {
+        let barTintColor = UIColor(red: 140/255, green: 11/255, blue: 66/255, alpha: 1)
+        UINavigationBar.appearance().barTintColor = barTintColor
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.font: UIFont(name: "DINAlternate-Bold", size: 16)!]
+    }
 }
 

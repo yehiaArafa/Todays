@@ -22,6 +22,8 @@ class RestaurantsViewController: UIViewController {
         fetchData()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 118
+        tableView.allowsSelection = false;
+        setNavigationBarTitle()
     }
     
     func registerTheNibs(){
@@ -32,7 +34,19 @@ class RestaurantsViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.loadingFeedCell)
     }
     
-  
+    func setNavigationBarTitle(){
+        switch currentCity{
+        case 0:
+            self.title = "Las Cruces Restaurants"
+        case 1:
+            self.title = "El Paso Restaurants"
+        case 2:
+            self.title = "Albuquerque Restaurants"
+        default:
+            self.title = "Restaurants"
+        }
+    }
+    
     func fetchData(){
         
         isLoading = true
@@ -133,10 +147,6 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 125
-//    }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if (resturantsResults.count == 0 || isLoading) {
