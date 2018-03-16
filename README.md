@@ -12,4 +12,5 @@
 
 - [Google Rss Feed News](https://news.google.com/news/?ned=us&gl=US&hl=en) are used to get the todays headlines for each city, The feed API return XML response. The app parse that response and populate a table view with the headlines. From there the user can select any headline he/she want and the app will take him to the full article detail, All on the same app, the app will not redirect him/her to Safari or Chrome. Also NMSU has its own [RSS feed](https://newscenter.nmsu.edu/).   
 - [Yelp Fusion API](https://www.yelp.com/developers) is used to get local buissness in each city. The API returns JASON response and the app parse that response by confirming to [Codable](https://developer.apple.com/documentation/swift/codable) protocol and populate nice table view with all the data.   
-- [Apixu](https://www.apixu.com/) API is used to have todays weather for each city, Apixu provides a complete Weather API solution.
+- [Apixu](https://www.apixu.com/) API is used to have todays weather for each city, Apixu provides a complete Weather API solution.   
+- I used this [Side Menu](https://github.com/jonkykong/SideMenu) with my app
