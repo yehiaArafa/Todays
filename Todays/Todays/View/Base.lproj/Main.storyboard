@@ -170,15 +170,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suX-bN-Dae">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suX-bN-Dae">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <connections>
                                     <outlet property="delegate" destination="uJh-Qa-l5y" id="EgO-d6-wKc"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="bottom" secondItem="c7a-Ld-C8M" secondAttribute="bottom" id="SFj-tp-L8p"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="leading" secondItem="c7a-Ld-C8M" secondAttribute="leading" id="TiV-Fg-xIY"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="trailing" secondItem="c7a-Ld-C8M" secondAttribute="trailing" id="baa-Nc-GCc"/>
+                            <constraint firstItem="suX-bN-Dae" firstAttribute="top" secondItem="c7a-Ld-C8M" secondAttribute="top" id="jpo-wb-Lg2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="c7a-Ld-C8M"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose City" id="rHg-bS-2g5"/>
@@ -191,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMb-xE-tJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="395"/>
+            <point key="canvasLocation" x="1016.25" y="394.01408450704224"/>
         </scene>
         <!--Menu-->
         <scene sceneID="RWL-Im-KVZ">
