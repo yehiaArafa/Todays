@@ -21,6 +21,8 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
     var tempF = ""
     var conditionText = ""
     var iconLink = ""
+    var feelsC = ""
+    var feelsF = ""
     
     var parserCompletionHandler: ((WeatherCityResult) -> Void)?
     
@@ -79,6 +81,8 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
         case "temp_f" : tempF += string
         case "text" : conditionText += string
         case "icon" : iconLink += string
+        case "feelslike_c" : feelsC += string
+        case "feelslike_f" : feelsF += string
         default: break
         }
     }
@@ -94,6 +98,8 @@ class XMLWeatherParser: NSObject, XMLParserDelegate{
             weatherItem.temperature_f = tempF
             weatherItem.weatherCondition = conditionText
             weatherItem.iconLink = parseIconLink(iconLink: iconLink)
+            weatherItem.feels_c = feelsC
+            weatherItem.feels_f = feelsF
         }
         
     }

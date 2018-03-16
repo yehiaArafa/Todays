@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yPG-JQ-VqW">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kjJ-DJ-ZZh" id="p3L-zu-1AS"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xad-l2-cR7">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="uSp-fG-dm2">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Xev-cC-hmx">
@@ -83,7 +83,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-0g-H03" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UFq-Sp-ETG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="-400"/>
+            <point key="canvasLocation" x="2036" y="-400"/>
         </scene>
         <!--ArticleDetails-->
         <scene sceneID="bOL-ZA-iUc">
@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-PK-chl">
-                                <rect key="frame" x="0.0" y="22" width="320" height="546"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -102,7 +102,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-B1-tSc">
-                                <rect key="frame" x="0.0" y="20" width="320" height="2"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="QDq-lU-PEN"/>
                                 </constraints>
@@ -160,7 +160,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-SR-cKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="-1220"/>
+            <point key="canvasLocation" x="2004" y="-1220"/>
         </scene>
         <!--Choose City-->
         <scene sceneID="zGk-MG-tnv">
@@ -249,8 +249,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-Ni-BXW" userLabel="weatherTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-Ni-BXW" userLabel="weatherTableView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="de8-BM-8yq" id="WC4-rH-IY9"/>
@@ -259,12 +260,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Uoe-Ni-BXW" firstAttribute="leading" secondItem="dVJ-PU-Tsn" secondAttribute="leading" id="9qP-5h-VhT"/>
-                            <constraint firstItem="Uoe-Ni-BXW" firstAttribute="trailing" secondItem="dVJ-PU-Tsn" secondAttribute="trailing" id="Uk9-93-5Rs"/>
-                            <constraint firstItem="Uoe-Ni-BXW" firstAttribute="bottom" secondItem="dVJ-PU-Tsn" secondAttribute="bottom" id="Xh4-fe-4cl"/>
-                            <constraint firstItem="Uoe-Ni-BXW" firstAttribute="top" secondItem="dVJ-PU-Tsn" secondAttribute="top" id="yIB-eh-fOz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dVJ-PU-Tsn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="rQD-1X-muL">
@@ -285,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKn-rV-L0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="1430"/>
+            <point key="canvasLocation" x="-354.375" y="1429.2253521126761"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Rtr-r4-2Kd">
@@ -317,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-QR-l0N">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="C21-jL-XOM" id="5cj-nb-ytI"/>
@@ -363,7 +358,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="br2-Xz-uCY">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -386,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2A1-4C-k2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2109" y="1812"/>
+            <point key="canvasLocation" x="2107.5" y="1811.6197183098591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jem-Ke-2Jr">
@@ -412,8 +407,8 @@
         <image name="menuButton" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7UA-OH-3p7"/>
-        <segue reference="b43-LA-eCy"/>
+        <segue reference="4eM-ZM-w2z"/>
+        <segue reference="09d-Mo-90X"/>
         <segue reference="0GV-YA-kWf"/>
         <segue reference="6xl-DH-fHh"/>
     </inferredMetricsTieBreakers>

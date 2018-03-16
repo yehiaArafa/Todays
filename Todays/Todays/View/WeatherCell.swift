@@ -10,12 +10,16 @@ import UIKit
 
 class WeatherCell: UITableViewCell {
 
+
     @IBOutlet weak var city: UILabel!
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var date_number: UILabel!
+    @IBOutlet weak var date_day: UILabel!
+    @IBOutlet weak var weatherCondition: UILabel!
     @IBOutlet weak var weather: UILabel!
+    @IBOutlet weak var format: UIImageView!
+    @IBOutlet weak var feels: UILabel!
     
     var downloadTask: URLSessionDownloadTask?
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,16 +51,29 @@ class WeatherCell: UITableViewCell {
         downloadTask = nil
     }
     
-    func setLabel(currentCity:String, currentIconLink: String, currentWeather: String){
-         city.text = currentCity
-         weather.text = currentWeather
-        
-        iconImage.image = UIImage(named: "ImagePlaceHolder")
-     
-        if let imageURL = URL(string: currentIconLink) {
-            downloadTask = iconImage.getImage(url: imageURL)
+    func setLabels(for searchResult: WeatherCityResult, currentCity: Int, celsius: Bool){
+        switch currentCity {
+        case 0:
+            city.text = "Las Cruces"
+        case 1:
+            city.text = "El Paso"
+        case 2:
+            city.text = "Albuquerque"
+        default:
+            city.text = ""
         }
-        
+        weatherCondition.text = searchResult.weatherCondition
+        if(celsius){
+            weather.text = searchResult.temperature_c
+             feels.text = searchResult.feels_c
+            format.image = UIImage(named: "celsius")
+        }
+        else{
+            weather.text = searchResult.temperature_f
+            feels.text = searchResult.feels_f
+            format.image = UIImage(named: "fahrenheit")
+        }
+      
     }
     
 }

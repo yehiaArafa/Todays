@@ -23,8 +23,9 @@ class weatherViewController: UIViewController {
         weatherTableView.tableFooterView = UIView()
         weatherTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         registerTheNibs()
-        //fetchData()
-         weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 3 - 40, left: 0 , bottom: 0, right: 20)
+        weatherTableView.allowsSelection = false;
+        fetchData()
+        weatherTableView.contentInset = UIEdgeInsets(top: weatherTableView.bounds.height / 2, left: 0 , bottom: 0, right: 0)
         setNavigationBarTitle()
     }
 
@@ -104,28 +105,29 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
-//        cell.setLabel(currentCity: weatherItem.cityName, currentIconLink: weatherItem.iconLink , currentWeather: weatherItem.temperature_f)
-//
-//        return cell
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath) as! WeatherCell
+        cell.setLabels(for: weatherItem, currentCity: currentCity, celsius: false)
 
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath)
+//
+//        return cell
+//    }
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor(red:0.752, green:0.752, blue:0.752, alpha: 0.5)
+        cell.backgroundColor = UIColor(red:220/250, green:220/250, blue:220/250, alpha: 0.5)
+        //cell.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //let tHeight = tableView.bounds.height / 2
-        return 252
+        return 120
     }
    
     

@@ -35,8 +35,7 @@ class RSSFeedViewController: UIViewController {
         fetchData(to: segmentedControl.selectedSegmentIndex)
         setSegmentedControlShape()
     }
-    
-    
+
     func setNavigationBarTitle(){
         if (didSelectNMSU){
             replaceSegments()

@@ -15,4 +15,6 @@ class WeatherCityResult{
     var temperature_f = ""
     var weatherCondition = ""
     var iconLink = ""
+    var feels_f = ""
+    var feels_c = ""
 }
