@@ -26,7 +26,6 @@
 		0C644A422054497D00F514A2 /* LoadingFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C644A412054497D00F514A2 /* LoadingFeedCell.xib */; };
 		0C644A462054F06D00F514A2 /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A452054F06D00F514A2 /* ArticleDetailsViewController.swift */; };
 		0C644A6E2055C8FE00F514A2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */; };
-		0C644A702055E0A400F514A2 /* FlickerPicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */; };
 		0C644A722055E11300F514A2 /* weatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A712055E11300F514A2 /* weatherViewController.swift */; };
 		0C644A742055E34B00F514A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A732055E34B00F514A2 /* MapViewController.swift */; };
 		0C644A7620560B0900F514A2 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */; };
@@ -57,7 +56,6 @@
 		0C644A412054497D00F514A2 /* LoadingFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingFeedCell.xib; sourceTree = "<group>"; };
 		0C644A452054F06D00F514A2 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		0C644A6D2055C8FE00F514A2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
-		0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerPicsViewController.swift; sourceTree = "<group>"; };
 		0C644A712055E11300F514A2 /* weatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherViewController.swift; sourceTree = "<group>"; };
 		0C644A732055E34B00F514A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				0C644A452054F06D00F514A2 /* ArticleDetailsViewController.swift */,
 				0C644A712055E11300F514A2 /* weatherViewController.swift */,
 				0C644A7520560B0900F514A2 /* RestaurantsViewController.swift */,
-				0C644A6F2055E0A400F514A2 /* FlickerPicsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 				0C41A5A520572AB800E042F3 /* WeatherCityResult.swift in Sources */,
 				0C4FD8762053053000FDC35F /* XMLFeedParser.swift in Sources */,
 				0C41A5D12059DC0F00E042F3 /* RestaurantsItemResult.swift in Sources */,
-				0C644A702055E0A400F514A2 /* FlickerPicsViewController.swift in Sources */,
 				0C644A6E2055C8FE00F514A2 /* SideMenuTableViewController.swift in Sources */,
 				0C41A5A32057198A00E042F3 /* WeatherCell.swift in Sources */,
 				0C4FD87C20533DA900FDC35F /* RSSFeedItemResult.swift in Sources */,

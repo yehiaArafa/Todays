@@ -103,6 +103,7 @@ class weatherViewController: UIViewController {
 
 }
 
+// MARK: - table View delegates
 
 extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -119,15 +120,8 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.WeatherCell, for: indexPath)
-//
-//        return cell
-//    }
-
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor(red:220/250, green:220/250, blue:220/250, alpha: 0.2)
+        cell.backgroundColor = UIColor(red:220/250, green:220/250, blue:220/250, alpha: 0.3)
         //cell.layer.backgroundColor = UIColor.clear.cgColor
     }
     
@@ -148,9 +142,10 @@ extension weatherViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+
+// MARK: - Tab Bar delegate
+
 extension weatherViewController: UITabBarDelegate{
-    
-    
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if(item.tag == 105){
@@ -161,7 +156,6 @@ extension weatherViewController: UITabBarDelegate{
             isCelsius = true
             weatherTableView.reloadData()
         }
-        
     }
     
 }

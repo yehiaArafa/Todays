@@ -80,7 +80,7 @@ class ArticleDetailsViewController: UIViewController {
     
 }
 
-
+// MARK: - Web view data source
 
 extension ArticleDetailsViewController: WKNavigationDelegate{
     

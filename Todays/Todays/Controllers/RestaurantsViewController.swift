@@ -138,9 +138,6 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.setLabels(for: restuaurantsItem)
         return cell
 
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.RestaurantsCell, for: indexPath)
-//        return cell
-    
         }
     }
     
